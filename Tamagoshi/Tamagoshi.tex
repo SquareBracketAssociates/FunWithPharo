@@ -1,0 +1,656 @@
+% $Author: ducasse $
+% $Date: 2009-08-24 10:17:33 +0200 (Mon, 24 Aug 2009) $
+% $Revision: 28563 $
+
+% HISTORY:
+% 2011-09-08: addressed mariano + nicolas paez comments
+% 2011-09-11 - Migrated to PharoBox: svn checkout https://XXX@scm.gforge.inria.fr/svn/pharobooks/PharoByExampleTwo-Eng
+% could change returns by answers 
+% 2011-09-28 - Alexandre doing a pass
+
+
+%=================================================================
+\ifx\wholebook\relax\else
+% --------------------------------------------
+% Lulu:
+	\documentclass[a4paper,10pt,twoside]{book}
+	\usepackage[
+		papersize={6.13in,9.21in},
+		hmargin={.75in,.75in},
+		vmargin={.75in,1in},
+		ignoreheadfoot
+	]{geometry}
+	\input{../common.tex}
+	\setboolean{lulu}{true}
+% --------------------------------------------
+% A4:
+%	\documentclass[a4paper,11pt,twoside]{book}
+%	\input{../common.tex}
+%	\usepackage{a4wide}
+% --------------------------------------------
+    \graphicspath{{figures/} {../figures/}}
+	\begin{document}
+\fi
+%=================================================================
+%\renewmessage{\nnbb}[2]{} % Disable editorial comments
+\sloppy
+%=================================================================
+
+\chapter{A Digital Animal: A gluttonous Tomagoshi}\label{cha:toma}
+
+In this chapter we propose you to develop a small digital animal that has its own life require care for you. 
+People were really found of digital animals called tomagoshi. Therefore  we will build one step by step. 
+This project is a pretext for revisiting the basic actions to define a class, instance variables and methods. 
+
+\section{A gluttonous Tamagoshi }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+We have to decide the behavior that our digital beats should have. 
+Here is the list of the behavior we propose you to implement for our  tomagoshi. The Figure~\ref{fig:tomastate} represents how the tomagoshi changes its state. 
+\begin{itemize}
+\item It can eat and digest food. It can be hungry when its tummy is empty and satisfied when it eats enough food.
+\item It has its own life cycle with its own isNights and days. It goes to sleep at isNight and wake up the morning. 
+\item It is gluttonous and selfish so falls asleep as soon as it eats enough. 
+\item Its change color depending on its mood.  
+We choose to have blue when it is  satisfied possibly sleeping, black when sleeping but hungry, green when waking up, and red when it is hungry. 
+\end{itemize}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=8cm]{figures/tomastate}
+\caption{\label{fig:tomastate}}
+\end{center}
+\end{figure}
+
+
+\section{A square tamagoshi}
+
+\begin{code}{}
+Morph subclass: #Tamagoshi	instanceVariableNames: ''	classVariableNames: ''	category: 'Tamagoshi'
+\end{code}
+
+
+\section{Representing Day and isNight Passing}
+The first thing we want to represent is the time passing and the alternation of isNights and days.
+To represent the time passing, the length of isNights and days and the change between days and isNights we propose you to use two instance variables: \ct{dayCount} and \ct{isNight} defined in the class \ct{Tomagoshi}. 
+
+To model isNight and day passing we have the idea that \ct{dayCount} will hold a number represents the number of hours (or tick) left in the isNight or day. This number will decrease regurlarly and when arriving at zero the isNight or day will end and a new will start. We will use \ct{isNight} as a boolean  representing the fact that this is the isNight.
+
+Define a package named Tamagoshi
+
+Define a new class category named for example 'TOMA' and define the class \ct{Tamagoshi}. As we would like to be able to interact with it and have a graphical representation, we define  the class  \ct{Tamagoshi} as a subclass of the class \ct{Morph}. 
+
+
+We edit the class comment by pressing the ? button and write something in the vein of:
+\begin{code}{}
+I represent a tamagoshi. A small virtual animal that have its own life.
+\end{code}
+
+
+\begin{code}{}
+Tamagoshi new openInHand
+\end{code}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=8cm]{figures/squareTamagoshi}
+\caption{\label{fig:tomastate}}
+\end{center}
+\end{figure}
+
+
+Create a protocol name stepping
+
+
+\begin{code}{}
+stepTime 	"Return the time interval for action"		^ 500
+\end{code}
+
+Open a Transcript
+
+
+
+\begin{code}{}
+step	self logCr: 'hello'
+\end{code}
+
+Open a Transcript
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=5cm]{figures/helloInTranscript}
+\caption{\label{fig:tomastate}}
+\end{center}
+\end{figure}
+
+Recreate a new tamagoshi
+\begin{code}{}
+Tamagoshi new openInHand
+\end{code}
+
+To stop bring halos + click on cross -> delete the tamagoshi
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=5cm]{figures/TamaWithHalo}
+\caption{\label{fig:tomastate}}
+\end{center}
+\end{figure}
+
+
+To interact with it
+- select the menu inspect 
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=5cm]{figures/TamaWithInspectMenu}
+\caption{\label{fig:tomastate}}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=5cm]{figures/TamagoshiWithInspector}
+\caption{\label{fig:tomastate}}
+\end{center}
+\end{figure}
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=5cm]{figures/TamaWithInspectorAndInstruction}
+\caption{\label{fig:tomastate}}
+\end{center}
+\end{figure}
+
+
+To open an inspector when we create a tamagoshi we can send the message inspect as follows: 
+
+\begin{code}{}
+Tamagoshi new openInHand inspect
+\end{code}
+
+\section{Adding a Name}
+
+
+
+
+\begin{code}{}
+Morph subclass: #Tamagoshi	instanceVariableNames: 'name'	classVariableNames: ''	category: 'Tamagoshi'
+\end{code}
+
+
+
+Make sure that if we do not give a name it is named 'pika'.  when we create a new object by sending  the new message, the message initialize is sent. So we redefine it to put a new value with the string 'pika'. 
+
+\begin{code}{}
+initialize	super initialize. 	name := 'pika'
+\end{code}
+
+
+Recreate a new tamagoshi
+\begin{code}{}
+Tamagoshi new openInHand inspect
+\end{code}
+
+you should get the following:
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=5cm]{figures/TamaWithName}
+\caption{\label{fig:tomastate}}
+\end{center}
+\end{figure}
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=5cm]{figures/withPopUp}
+\caption{\label{fig:tomastate}}
+\end{center}
+\end{figure}
+
+
+\begin{code}{}
+UIManager default request:  'Give a name to your tamagoshi' 
+\end{code}
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=5cm]{figures/requestInTranscript}
+\caption{\label{fig:tomastate}}
+\end{center}
+\end{figure}
+
+\begin{code}{}
+promptForName	name := UIManager default request: 'Give a name please'
+\end{code}
+
+
+
+
+\begin{code}{}
+step	self logCr: 'hello, my name is ', name
+\end{code}
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=5cm]{figures/helloWithPika}
+\caption{\label{fig:tomastate}}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=5cm]{figures/inspectorWithFifiPrompt}
+\caption{\label{fig:tomastate}}
+\end{center}
+\end{figure}
+
+
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=5cm]{figures/promptWithNil}
+\caption{\label{fig:tomastate}}
+\end{center}
+\end{figure}
+
+
+\begin{code}{}
+promptForName	| newName |	newName := UIManager default request: 'Give a name please'.	newName isNil 		ifTrue: [ ]		ifFalse: [ name := newName ]
+\end{code}
+
+\begin{code}{}
+promptForName	| newName |	newName := UIManager default request: 'Give a name please'.	newName isNotNil 		ifTrue: [ name := newName ]
+\end{code}
+
+\begin{code}{}
+getLiving	self startStepping
+\end{code}
+
+\begin{code}{}
+stopLiving	self stopStepping
+\end{code}
+
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=5cm]{figures/LargerRounder}
+\caption{\label{fig:tomastate}}
+\end{center}
+\end{figure}
+
+
+
+drawOn: controls the drawing of the Morph. We can for example add an oval. 
+
+\begin{code}{}
+drawOn: aCanvas	super drawOn: aCanvas.	aCanvas fillOval: self bounds			fillStyle: self fillStyle 			borderWidth: 3			borderColor: Color white.	
+\end{code}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=5cm]{figures/WithEllipse}
+\caption{\label{fig:tomastate}}
+\end{center}
+\end{figure}
+
+
+
+
+
+
+
+
+\begin{code}{}
+eyesOn: aCanvas	| b m y |	b := self bounds.	m := b width / 2.	y := b width / 4.	aCanvas 			fillOval: ((b origin   + (m - 20 @ y)) extent: 10@10)			fillStyle: self fillStyle 			borderWidth: 3			borderColor: Color white.	aCanvas 			fillOval: ((b origin   + (m + 15 @ y)) extent: 10@10)			fillStyle: self fillStyle 			borderWidth: 3			borderColor: Color white.
+\end{code}
+
+\begin{code}{}
+drawOn: aCanvas	super drawOn: aCanvas.	self eyesOn: aCanvas	
+\end{code}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=5cm]{figures/justEyes}
+\caption{\label{fig:tomastate}}
+\end{center}
+\end{figure}
+
+
+
+Now we can define the mouth of our digital animal by drawing two lines like in the following and we obtain Figure~\ref{fig:Smiling}.
+\begin{code}{}
+mouthOn: aCanvas	| b m y middlePoint |	b := self bounds.	m := b width / 2.	y := b width / 1.8.	middlePoint := b origin +  ( m@y ).	aCanvas 		line: b origin + ((m-15) @ (y -5)) to:  middlePoint width: 3 color: Color black.	aCanvas 		line: b origin + ((m+15) @ (y -5)) to: middlePoint width: 3 color: Color black.
+\end{code}
+
+\begin{code}{}
+drawOn: aCanvas	super drawOn: aCanvas.	self eyesOn: aCanvas.	self mouthOn: aCanvas.
+\end{code}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=5cm]{figures/Smiling}
+\caption{A smiling tamagoshi.\label{fig:Smiling}}
+\end{center}
+\end{figure}
+
+
+\section{Eating Behavior}
+
+
+Let us add a tummy to our tamagoshi. 
+
+\begin{code}{}
+Morph subclass: #Tamagoshi	instanceVariableNames: 'name tummy'	classVariableNames: ''	category: 'Tamagoshi'
+\end{code}
+
+\begin{code}{}
+initialize	super initialize. 	self useRoundedCorners.	self extent: 100@80.	name := 'pika'.	tummy := 5.
+\end{code}
+
+
+Now we can also change the printing behavior to show its tummy.
+
+\begin{code}{}
+step	self logCr: 'hello, my name is ', name, ' and my tummy is: ', tummy printString.
+\end{code}
+
+\begin{code}{}
+tummyOn: aCanvas	aCanvas		drawString: tummy printString		at: self bounds corner - (20 @ 20)		font: nil		color: Color yellow
+\end{code}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=5cm]{figures/withbBelly}
+\caption{Now we show the food items in the tamagoshi' tummy.\label{withbBelly}}
+\end{center}
+\end{figure}
+
+
+
+do not forget to change the drawOn: method to invoke the tummyOn: method.
+\begin{code}{}
+drawOn: aCanvas	super drawOn: aCanvas.	self eyesOn: aCanvas.	self mouthOn: aCanvas.	self tummyOn: aCanvas. 
+\end{code}
+
+Now we would like to define the method eat so that we can feed our tamagoshi.
+
+
+
+\begin{code}{}
+eat 	tummy := tummy + 1
+\end{code}
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=12cm]{figures/eating}
+\caption{Now we show the food items in the tamagoshi' tummy.\label{withbtummy}}
+\end{center}
+\end{figure}
+
+
+\begin{code}{}
+eat 	tummy := tummy + 1.
+	self changed.
+\end{code}
+
+
+Now we will tell the morph that it should react to mouse events.
+\begin{code}{}
+handlesMouseDown: evt	"Returning true means that the morph can react to mouse click"	^ true
+\end{code}
+
+And we will make sure that when we click on it, it gets fed.
+\begin{code}{}
+mouseDown: evt		self eat.	
+\end{code}
+
+Now it may be wise to limit the stomach capability of our digital friend. We revise then the eat method to only increase it if we did not reach a limit. 
+
+\begin{code}{}
+eat 	tummy < 55		ifTrue: [ tummy := tummy + 1				  self changed]. 
+\end{code}
+
+\section{Digesting}
+
+
+Extract the code of the step method into a new method name talk.
+\begin{code}{}
+talk	self logCr: 'hello, my name is ', name, ' and my tummy is: ', tummy printString.
+\end{code}
+
+\begin{code}{}
+step	self talk.
+\end{code}
+
+Now we are ready to make our tamagoshi digest its food. 
+
+\begin{code}{}
+digest	tummy := tummy - 1.	self changed.
+\end{code}
+
+Try with the inspector to send some digest messages to your tamagoshi. 
+
+
+Now this is annoying to add the changed message everywhere so we introduce a method named: 
+\begin{code}{}
+tummy: aNumber	tummy := aNumber.	self changed.
+\end{code}
+
+and we use it in eat and digest
+
+\begin{code}{}
+digest	self tummy: tummy - 1.
+\end{code}
+
+\begin{code}{}
+eat 	tummy < 55		ifTrue: [ self tummy: tummy + 1 ]. 
+\end{code}
+
+\begin{code}{}
+step	self talk.	self digest.
+\end{code}
+
+You will quickly see that digest is wrong because we will get negative numbers really fast. So first we change 
+the definition of digest to be 
+
+\begin{code}{}
+digest	tummy = 0 		ifFalse: [ self tummy: tummy - 1]
+\end{code}
+
+Now since it is digesting too fast we should think how we could make our tamagoshi digest slower. What we need is 
+a counter of the tick passed and based on that digest or not. So we add the hours instance variable to the class. 
+
+\begin{code}{}
+Morph subclass: #Tamagoshi	instanceVariableNames: 'name tummy hours'	classVariableNames: ''	category: 'Tamagoshi'
+\end{code}
+
+\begin{code}{}
+initialize	super initialize. 	self useRoundedCorners.	self extent: 100@80.	name := 'pika'.	tummy := 5.	hours := 0.
+\end{code}
+
+
+\begin{code}{}
+nextHour		hours := hours + 1
+\end{code}
+
+\begin{code}{}
+step	self talk.	self nextHour.	self digest
+\end{code}
+
+Now we can make our tamagoshi digest slower by simply making sure that several hours passed before it digests.
+Just checking for example if the number of hours is divisible b a given number will do the trick.
+
+\begin{code}{}
+step	self talk.	self nextHour.	(hours isDivisibleBy: 3)
+		ifTrue: [self digest ]
+\end{code}
+
+
+\section{Hungry}
+
+Now we get ready to make our tamagoshi changing face when he is hungry. 
+
+\begin{code}{}
+isHungry	^ tummy isZero
+\end{code}
+
+We can now rewrite digest using isHungry as follow:
+\begin{code}{}
+digest	self isHungry		ifFalse: [ self tummy: tummy - 1]
+\end{code}
+
+
+\begin{code}{}
+hungryMouthOn: aCanvas	| b m y middlePoint |	b := self bounds.	m := b width / 2.	y := b width / 1.8.	middlePoint := b origin +  ( m@y ).	aCanvas 		line: b origin + ((m-15) @ (y + 5)) to:  middlePoint width: 3 color: Color black.	aCanvas 		line: b origin + ((m+15) @ (y + 5)) to: middlePoint width: 3 color: Color black.
+\end{code}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=12cm]{figures/hungry}
+\caption{Our tamagoshi shows now that he is hungry.\label{withbtummy}}
+\end{center}
+\end{figure}
+
+Now e can change a bit the messages send by our tamagoshi. 
+
+\begin{code}{}
+talk	self isHungry		ifTrue: [ self logCr: 'Please feed me' ]		ifFalse: [ self logCr: 'hello, my name is ', name, ' and I''m ok'].
+\end{code}
+
+
+\section{Nights and days}
+Now we want to manage the night and day period of our tamagoshi. 
+
+
+\begin{code}{}
+Morph subclass: #Tamagoshi	instanceVariableNames: 'name tummy hours isNight'	classVariableNames: ''	category: 'Tamagoshi'
+\end{code}
+
+\begin{code}{}
+initialize	super initialize. 	self useRoundedCorners.	self extent: 100@80.	name := 'pika'.	tummy := 5.	hours := 0.	isNight := false
+\end{code}
+
+\begin{code}{}
+isNight	^ isNight
+\end{code}
+
+\begin{code}{}
+switchDayPeriod	"Switch from night to day and day to night"	isNight := isNight not.
+\end{code}
+
+\begin{code}{}
+checkAndNextDayPeriod	"Switch from night to day and day to night when necessary" 
+	(hours isDivisibleBy: 12)		ifTrue: [ self switchDayPeriod ]
+\end{code}
+
+
+We can change the messages to show that our animal is sleeping
+
+\begin{code}{}
+talk	self isNight		ifTrue: [ self logCr: 'ZZZzzzzzzz' ]		ifFalse: [ 			self isHungry				ifTrue: [ self logCr: 'Please feed me' ]				ifFalse: [ self logCr: 'hello, my name is ' , name , ' and I''m ok' ] ]
+\end{code}
+
+As we will see later, these conditionals all over the place are not that nice, each time we
+add a new behavior we have to change talk and the drawOn: method logic becomes more and more complex. 
+
+\begin{code}{}
+sleepyEyesOn: aCanvas	| b m y |	b := self bounds.	m := b width / 2.	y := b width / 4.	aCanvas 			fillOval: ((b origin   + (m - 20 @ y)) extent: 11@5)			fillStyle: self fillStyle 			borderWidth: 3			borderColor: Color white.	aCanvas 			fillOval: ((b origin   + (m + 15 @ y)) extent: 11@5)			fillStyle: self fillStyle 			borderWidth: 3			borderColor: Color white.
+\end{code}
+
+\begin{code}{}
+drawOn: aCanvas	super drawOn: aCanvas.	self isNight		ifTrue: [ 				self sleepyEyesOn: aCanvas.				self color: Color darkGray ]		ifFalse: [ 			self eyesOn: aCanvas.			self isHungry				ifTrue: [ 					self color: Color red.					self hungryMouthOn: aCanvas ]				ifFalse: [ 					self color: Color blue.					self mouthOn: aCanvas ] ].	self bellyOn: aCanvas.	self changed.
+\end{code}
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=10cm]{figures/sleeping}
+\caption{Now sleeping.}
+\end{center}
+\end{figure}
+
+
+
+
+\section{Further Experiments}
+Now we propose you different modifications to change the behavior of your tomagoshi. 
+
+\begin{itemize}
+\item Make that we can only feed the tomagoshi the day. 
+\item Make it die when it is starving from too long time (hints you can use the method 
+\ct{delete} or \ct{stopStepping}).
+\item Make it happy, you could make it sings.
+\item Change its graphical representation.  
+\end{itemize}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=10cm]{full}
+\caption{An object presents an interface composed by a set of messages defining \textit{what} the object can do. This behavior is realized by methods that specify \textit{how} the behavior is implemented. To realize the behavior, data is most of the time required. The data is only accessed by the methods. \label{fig:full}}
+\end{center}
+\end{figure}
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=10cm]{messageOnly}
+\caption{A tomagoshi. It proposes to the rest of the world a list of messages representing its 
+behavior, \textit{i.e.,} what he can do. From outside the tomagoshi its internal representation is not visible\label{fig:messageOnly}}
+\end{center}
+\end{figure}
+
+
+
+\section{What the Example Shows}
+We hope that implementing a tomagoshi was certainly a fun experiment. However this is more than that. Now we will look at all the lessons
+we can learn from it. 
+
+
+\paragraph{Messages vs. Methods: What vs. How.} The tomagoshi implementation illustrates the difference between messages\index{messages} and \index{methods} methods. A message represents \textit{what} an object is capable to do. It is composed by a list of actions. 
+In the figure\ref{fig:messageOnly}, the messages are all the behavior of the tomagoshi such as \ct{eat}, \ct{digest}, \ct{wakeUp}... Methods define \textit{how} the behavior described by the message is actually specified. The Figure~\ref{fig:full} shows that the message \ct{eat} is realized by the method \ct{eat}. As we decided to represent the tummy 
+of a tomagoshi using just one number representing the number of items the tomagoshi ate, the \textit{code} \ct{eat}
+increments the \ct{tummy} instance variables. 
+
+
+
+
+\paragraph{\index{Encapsulation}Encapsulation.} The example illustrates that the data hold in instance variable is private to the object. Only its methods can access them. In fact as someone interacting with the tomagoshi we do not have to know how it is internally defined. We are only interested by the messages that we can send to it. We say that the data is encapsulated. What encapsulation provides is that we can continue to interact with the
+tomagoshi using the same messages even if its internal representation changes. We can rely on its messages.
+For example, we used two instance variables one for the tummy and one for the hunger of the tomagoshi. Other implementation strategies can still provides the same interface (set of messages) while changing the number and roles of instance variables. 
+
+
+\paragraph{Factoring Logic.}
+At the code level the example shows how the internal representation of certain state can be factored and only expressed in one place. Hence the method \ct{wakeUpState} which returns a symbol (see~\mthref{mth:wakeUpState}) is the only one that defines how the state is represented. This means that we can change it freely. In our case this is not important but we could. This avoid to duplicate this knowledge all over the places. This follow the rule "Say once and only once". 
+
+
+
+%=========================================================
+\ifx\wholebook\relax\else
+   \bibliographystyle{jurabib}
+   \nobibliography{scg}
+   \end{document}
+\fi
+
+%=================================================================
+\ifx\wholebook\relax\else\end{document}\fi
+%=================================================================
+
+%-----------------------------------------------------------------
+
+%%% Local Variables:
+%%% coding: utf-8
+%%% mode: latex
+%%% TeX-master: t
+%%% TeX-PDF-mode: t
+%%% ispell-local-dictionary: "english"
+%%% End:
