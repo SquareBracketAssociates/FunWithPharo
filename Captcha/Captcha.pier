@@ -42,7 +42,7 @@ s
 
 Now to reverse the string 'frog' we see that the ==$f== index 1 should be put in the position 4, the ==$r== index 2 in the position 3, the ==$o== index 3 in the position 2 and ==$g== index 4 should be put in the position 1. We should find a relation between the actual index of the character and its future index once the string will be reversed. 
 
-Let us think again about it by now using the original string size (i.e., 4).  It seems that the target index is size + 1 - source index. Let us verify this hypothesis:  ==$f== whose index is 1, will be put in the index ==4 + 1 - 1 = 4==, the ==$r== whose index is 2, will be put in the position ==4 + 1 - 2 = 3==, the ==$o== whose index is 3, will be put  in the position == 4 + 1 - 3 = 2== and ==$g== index 4 should be put in the position 1. 
+Let us think again about it by now using the original string size (i.e., 4).  It seems that the target index is ==size + 1 - source index==. Let us verify this hypothesis:  ==$f== whose index is 1, will be put in the index ==4 + 1 - 1 = 4==, the ==$r== whose index is 2, will be put in the position ==4 + 1 - 2 = 3==, the ==$o== whose index is 3, will be put  in the position == 4 + 1 - 3 = 2== and ==$g== index 4 should be put in the position 1. 
 
 
 To solve this problem we also need to know how to perform a loop. The following script prints all the number from 1 to 10. 
@@ -72,7 +72,7 @@ targetString
 ]]]
 
 
-Now we can define a new method on the class String. In such case the sourceString variable is not necessariy anymore since this is the string receiving the message that will be the sourceString. 
+Now we can define a new method on the class String. In such case the sourceString variable is not necessarily anymore since this is the string receiving the message that will be the sourceString. 
 
 [[[
 String>>captchaReversed
@@ -93,7 +93,7 @@ String>>captchaReversed
 -> 'ipuoy'
 ]]]
 
-Now ==(self size + 1)== is invariant during the loop. It does not change so we can extract it outside the loop.
+ Now ==self size + 1== is invariant during the loop. It does not change so we can extract it outside the loop.
 
 [[[
 String>>captchaReversed
