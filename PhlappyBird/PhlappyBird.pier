@@ -1,0 +1,85 @@
+!PhlappyBird
+
+PhlappyBird is a smalltalk clone of the well-known little game. It is a nice example of building a small Morphic application and well suited for a tutorial.
++file://figures/PhlappyBird.png+
+
+!! The top level window
+
+The top level window is a SystemWindow containing a game scene and a button to restart the game. The scene will be recreated when the button is pressed, and it is easiest to just have an instance variable refering to it. 
+
+[[[
+SystemWindow subclass: #PhlappyBirdGame
+	instanceVariableNames: 'scene'
+	classVariableNames: ''
+	category: 'PhlappyBird'
+]]]
+
+The game can be started by typing ==PhlappyBirdGame play <DoIt>==. That creates a new game, opens it window in te world and sets its width and height.
+
+[[[
+PhlappyBirdGame class>>play
+	PhlappyBirdGame new
+		openInWorld;
+		extent: 298@510.
+]]]
+
+In Pharo, ==new== calls ==initialize==. In the initialization, the scene is created, the window is given a title and made unresizable, the scene is told that when the space key is pressed the bird should flap its wings and the restart button is added.
+
+[[[
+PhlappyBirdGame>>initialize
+	super initialize.
+	scene := self newScene.
+	self 
+		setLabel: 'Phlappy Bird';
+		beUnresizeable;
+		on: Character space do: [ scene flapTheBird ];
+		addMorph: self createRestartButton 
+		    frame: (0@0.92 corner: 1@1)
+]]].
+
+The ==addMorph:frame:== message is the morphic implementation of the composite pattern. All Morphs can be composites. Most Morphs use ==addMorph:fullFrame:== where the frame provides a layout object, but a SystemWindow adds a simpler variant where a proportional layout can be used with a rectangle with values between 0 and 1 for the relative size. The button takes the 8% of the bottom part of the user-draw area of the window.
+The scene takes the rest.
+
+[[[
+PhlappyBirdGame>>newScene
+	| newScene |
+	newScene := Scene new.
+	self 
+		addMorph: newScene 
+		frame: (0@0 corner: 1@0.92).	
+	^ newScene
+]]]
+
+!!! The restart button
+The button is a ==PluggableButtonMorph==. A PluggableButtonMorph is a themeable button, that takes colors, borders and corner radius from the currently selected theme. 
+
+;SystemWindow is also a theme-aware object.
+
+[[[
+PhlappyBirdGame>>createRestartButton
+	^ PluggableButtonMorph
+		on: self
+		getState: nil
+		action: #restartPressed
+		label: #restartButtonLabel
+]]]
+
+The PluggableButtonMorph will react to being clicked by performing the ==restartPressed== action method on its model (self), and gets its label from the ==restartButtonLabel== method. The label is just a string. A PluggableButtonMorph can show a binary value, and by ==setState: nil== it is indicated that this is just a plain button.
+
+[[[
+PhlappyBirdGame>>restartButtonLabel
+	^ 'New Game'
+]]]
+
+When the button is pressed, the current scene is removed as submorph from the window and a new one is created and added.
+[[[
+PhlappyBirdGame>>restartPressed
+	scene delete.
+	scene := self newScene.
+]]]
+
+!! The scene
+
+The scene is responsible for the gameplay. It knows the elements that need to be shown on the screen and how to animate them.
+
+Animation in Morphic is done by 
