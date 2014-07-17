@@ -1,0 +1,17 @@
+*.aux
+*.log
+*.out
+*.bbl
+*.blg
+auto/
+*.synctex.gz
+*.toc
+*.pier.*
+*.pillar.*
+/Pharo.changes
+/Pharo.image
+/pharo
+/pharo-ui
+/pharo-vm/
+/pillar
+/FunWithPharo.tex
