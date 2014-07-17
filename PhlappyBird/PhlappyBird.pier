@@ -81,4 +81,4 @@ PhlappyBirdGame>>restartPressed
 
 The scene is responsible for the gameplay. It knows the elements that need to be shown on the screen and how to animate them.
 
-Animation in Morphic is done by 
+Animation in Morphic is done by calling step on morphs.
