@@ -1,6 +1,7 @@
 !PhlappyBird
 
 PhlappyBird is a smalltalk clone of the well-known little game. It is a nice example of building a small Morphic application and well suited for a tutorial.
++file://figures/PhlappyBird.png+
 
 !! The top level window
 
@@ -81,4 +82,52 @@ PhlappyBirdGame>>restartPressed
 
 The scene is responsible for the gameplay. It knows the elements that need to be shown on the screen and how to animate them.
 
-Animation in Morphic is done by calling step on morphs.
+Animation in Morphic is done by making morphs step.
+
+!! Resources
+
+Where do all the bitmaps for the game come from? The class ==Resources== has class-side methods where they are stored.
+
+[[[
+Object subclass: #Resources
+	instanceVariableNames: ''
+	classVariableNames: ''
+	category: 'PhlappyBird'
+]]]
+
+There are seven different bitmaps with corresponding method names:
+-background
+-bird1
+-bird2
+-bird3
+-ground
+-pipe1
+-pipe2
+
+They all have the same structure. For each of these methods, there is a corresponding content method that holds a Base64 encoded string representation of the bitmap.
+
+[[[
+Resources class>>background
+	^ self loadForm: #backgroundContent
+]]]
+
+LoadForm looks in the cache to find the Form and creates it from the contents when it cannot find the key
+
+[[[
+Resources class>>loadForm: aSymbol
+	^ self cache 
+		at: aSymbol
+		ifAbsentPut:
+			[ Form new 
+				readFrom: (Base64MimeConverter 
+					mimeDecodeToBytes: (self perform: aSymbol) readStream) ]
+]]]
+
+On the class side, there is a instance variable cache and a lazy accessor.
+
+[[[
+Resources class>>cache
+	^ cache := cache ifNil: [ cache := Dictionary new ]
+]]]
+
+Please note that the resource methods cannot be very large, as there are method size limitations in the tooling.
