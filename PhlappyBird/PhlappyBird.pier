@@ -1,7 +1,6 @@
 !PhlappyBird
 
 PhlappyBird is a smalltalk clone of the well-known little game. It is a nice example of building a small Morphic application and well suited for a tutorial.
-+file://figures/PhlappyBird.png+
 
 !! The top level window
 
