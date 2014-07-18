@@ -1,12 +1,13 @@
 ! Fun with Capchas
 
+Capchas are ways to control that a service is not accessed by a robot. In this chapter we propose to implement some capchas as a way to practice and learn Pharo. Several capcha will be implemented but first let us start with just manipulating strings.
 
 
-The problem that we propose to you is to reserve a string. It can useful to build captcha as we will show later 
-and it is a small and simple one that we will teach how to interact with strings and with collections of objects. 
+!! Reversing a string
+
+The problem that we propose to you is to reserve a string. It can useful to build capcha as we will show later and it is a small and simple one that we will teach how to interact with strings and with collections of objects. 
 
 [[[
-
 'frog'
 -> 
 'grof'
@@ -14,7 +15,10 @@ and it is a small and simple one that we will teach how to interact with strings
 
 
 !!! Solution \#4
-There are several solutions to this problems and we will look at some of them but first let's look at some basic elements about strings.
+
+There are several solutions to this problem and we will look at some of them but first let's look at some basic elements about strings.
+
+!!! Basic on strings
 
 A string is a sequence of characters and the first one has the index 1 (and not zero like in some other languages)
 [[[
@@ -28,9 +32,7 @@ To access an element we use the message ==at: anIndex==.
 -> $f
 ]]]
 
-
 To set the value of a string element we use the message ==at:anIndex put: aCharacter==
-
 
 [[[
 | s |
@@ -39,6 +41,8 @@ s at: 1 put: $z.
 s
 -> zrog
 ]]]
+
+!!! Reversing
 
 Now to reverse the string 'frog' we see that the ==$f== index 1 should be put in the position 4, the ==$r== index 2 in the position 3, the ==$o== index 3 in the position 2 and ==$g== index 4 should be put in the position 1. We should find a relation between the actual index of the character and its future index once the string will be reversed. 
 
@@ -72,7 +76,7 @@ targetString
 ]]]
 
 
-Now we can define a new method on the class String. In such case the sourceString variable is not necessarily anymore since this is the string receiving the message that will be the sourceString. 
+Now we can define a new method on the class ==String==. In such case the sourceString variable is not necessarily anymore since this is the string receiving the message that will be the sourceString. 
 
 [[[
 String>>captchaReversed
@@ -125,13 +129,19 @@ SequenceableCollection>>reversed
 
 	==self species new: n.== makes the code working on several different collection. ==species== returns a class of the same species than the receiver of the message, the class ==Array== if the receiver is an array, the String class if the receiver a string. So result points on a new string or collection.
 
-The following example brings an interesting idea for another string manipulation for captcha: asking the user to enter an anagram
+
+!! Palindroms
+
+The following example brings an interesting idea for another string manipulation for captcha: asking the user to enter an palindrome. Palindrome are words or sentences which are symmetrical. For example, 'civic', 'refer' and  'No lemon, no melon' are palidromes.
+
 
 [[[
-'arvra' captchaReversed 
+'civic' captchaReversed 
 -> 
-'arvra'
+'civic'
 ]]]
+
+Here is a way to check if a string is a capcha.
 
 [[[
 captchaIsAnagram
@@ -143,11 +153,12 @@ captchaIsAnagram
 	'avdna' captchaIsAnagram 
 		false
 	"
-	1 to: self size//2 do: [ :i | (self at: i) = (self at: self size + 1 - i)
-			ifFalse: [ ^false ]
+	1 
+		to: self size//2 
+		do: [ :i | (self at: i) = (self at: self size + 1 - i)
+						ifFalse: [ ^false ]
 				].
-			
-		^true
+	^true
 ]]]
 
 Now again the expression ==self size + 1== is constant.
@@ -163,15 +174,16 @@ captchaIsAnagram
 		false
 	"
 	| n |
-		
 	n := self size + 1.
-	1 to: self size//2 do: [ 
-		:i | ( self at:  i ) = ( self at:  n - i)
-			ifFalse: [ ^false ]
+	1 
+		to: self size//2 
+		do: [ :i | 
+			( self at:  i ) = ( self at:  n - i)
+				ifFalse: [ ^false ]
 				].
-		^true
+	^true
 ]]]
-		
+
 
 
 % Local Variables:
