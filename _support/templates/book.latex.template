@@ -14,6 +14,7 @@
 \graphicspath{
   {figures/}
   {PhlappyBird/}
+  {Captcha/}
   {Tamagoshi/}
 }
 %=================================================================
@@ -33,7 +34,7 @@
         Damien Cassou\quad \\
         St\'ephane Ducasse\quad \\
         ... and Many More :)}
-\title{\Huge\bf Updated Pharo by Example}
+\title{\Huge\bf Fun with Pharo}
 \isodate
 \date{\emph{Version of \today}}
 \maketitle
