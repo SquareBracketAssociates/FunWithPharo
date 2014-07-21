@@ -84,6 +84,12 @@ The scene is responsible for the gameplay. It knows the elements that need to be
 
 Animation in Morphic is done by making morphs step.
 
+To create the illusion of movement, there are 3 different images of the flappy bird, that are shown one after the other.
+Because the wings are in a different position each time, it looks like the wings are flapping.
++file://figures/Bird1.png+
++file://figures/Bird2.png+
++file://figures/Bird3.png+
+
 !! Resources
 
 Where do all the bitmaps for the game come from? The class ==Resources== has class-side methods where they are stored.
