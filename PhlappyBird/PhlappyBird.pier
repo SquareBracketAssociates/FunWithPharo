@@ -81,14 +81,33 @@ PhlappyBirdGame>>restartPressed
 !! The scene
 
 The scene is responsible for the gameplay. It knows the elements that need to be shown on the screen and how to animate them.
+Animation in Morphic is done by making morphs step. After each step, the scene checks if there has been a collision that would
+end the game.
 
-Animation in Morphic is done by making morphs step.
+[[[
+Scene>>step
+	self animate.
+	self detectCollision.
+]]]
+
+The step method has to be sent often enough to create a smooth effect. The stepTime sets the delay in milliseconds.
+35 ms corresponds with about 28 times/second. For perfect results, it should be synchronized with the screen refresh
+rate. If the stepTime is set too low, the game becomes too difficult to play. or the movement in the animation needs to be
+reduced.
+
+[[[
+Scene>>stepTime
+	^35
+]]]   
 
 To create the illusion of movement, there are 3 different images of the flappy bird, that are shown one after the other.
-Because the wings are in a different position each time, it looks like the wings are flapping.
+Because the wings are in a different position each time, it looks like the wings are flapping. If a smoother movement is
+wanted, more images should be added.
 +file://figures/Bird1.png+
 +file://figures/Bird2.png+
 +file://figures/Bird3.png+
+
+
 
 !! Resources
 
