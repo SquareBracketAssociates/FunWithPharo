@@ -1,7 +1,7 @@
 !PhlappyBird
 
 PhlappyBird is a smalltalk clone of the well-known little game. It is a nice example of building a small Morphic application and well suited for a tutorial.
-+file://figures/PhlappyBird.png+
++file://figures/PhlappyBird.png|width=50|label=PhlappyBird+
 
 !! The top level window
 
@@ -103,9 +103,9 @@ Scene>>stepTime
 To create the illusion of movement, there are 3 different images of the flappy bird, that are shown one after the other.
 Because the wings are in a different position each time, it looks like the wings are flapping. If a smoother movement is
 wanted, more images should be added.
-+file://figures/Bird1.png+
-+file://figures/Bird2.png+
-+file://figures/Bird3.png+
++file://figures/Bird1.png|width=25|label=Bird1+
++file://figures/Bird2.png|width=25|label=Bird2+
++file://figures/Bird3.png|width=25|label=Bird3+
 
 
 
