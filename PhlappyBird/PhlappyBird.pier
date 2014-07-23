@@ -1,6 +1,6 @@
 !PhlappyBird
 
-PhlappyBird is a smalltalk clone of the well-known little game. It is a nice example of building a small Morphic application and well suited for a tutorial.
+PhlappyBird is a smalltalk clone of the well-known little game. It is a nice example of building a small Morphic application and well suited for a tutorial. 
 +file://figures/PhlappyBird.png|width=50|label=PhlappyBird+
 
 !! The top level window
@@ -81,6 +81,38 @@ PhlappyBirdGame>>restartPressed
 !! The scene
 
 The scene is responsible for the gameplay. It knows the elements that need to be shown on the screen and how to animate them.
+[[[
+PanelMorph subclass: #Scene
+	instanceVariableNames: 'bird script animated physicals score scoreLabel'
+	classVariableNames: ''
+	category: 'PhlappyBird'
+]]]
+In the initialization, all game elements are initialized. The score is set to zero. 
+The bird, ground and end-of-world are going to be responsible for detecting collisions, and 
+will then call the scene to deal with the consequences of the collision. The initial collection of things 
+to animate, and those that might collide is created. All morphs are added to the panel and the bird is 
+told to start moving. 
+
+[[[
+Scene>>initialize
+	| endOfWorld ground |
+	super initialize.
+	score := 0.
+	bird := Bird collisionResolver: self.
+	ground := Ground top: 400 collisionResolver: self.
+	endOfWorld := EndOfWorld topLeft: self topLeft collisionResolver: self.
+	script := Script scene: self.
+	animated := OrderedCollection with: bird with: ground with: script.
+	physicals := OrderedCollection with: bird with: endOfWorld with: ground.
+	self
+		addMorph: Background new;
+		addMorph: ground;
+		addMorph: bird;
+		addMorph: endOfWorld;
+		addMorph: self createScoreLabel.
+	bird liftOff
+]]] 
+
 Animation in Morphic is done by making morphs step. After each step, the scene checks if there has been a collision that would
 end the game.
 
@@ -107,6 +139,12 @@ wanted, more images should be added.
 +file://figures/Bird2.png|width=25|label=Bird2+
 +file://figures/Bird3.png|width=25|label=Bird3+
 
+In the animation, all things that can move are send the ==tick== message.
+
+[[[
+Scene>>animate
+	animated do: #tick.
+]]]
 
 
 !! Resources
