@@ -5,7 +5,7 @@ Capchas are ways to control that a service is not accessed by a robot. In this c
 
 !! Reversing a string
 
-The problem that we propose to you is to reserve a string. It can useful to build capcha as we will show later and it is a small and simple one that we will teach how to interact with strings and with collections of objects. 
+The problem that we propose to you is to reserve a string. It can be useful to build capcha as we will show later and it is a small and simple one that we will teach how to interact with strings and with collections of objects. 
 
 [[[
 'frog'
