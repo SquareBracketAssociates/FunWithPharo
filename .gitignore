@@ -3,6 +3,9 @@
 *.out
 *.bbl
 *.blg
+*.glo
+*.idx
+*.url
 auto/
 *.synctex.gz
 *.toc
@@ -15,3 +18,4 @@ auto/
 /pharo-vm/
 /pillar
 /FunWithPharo.tex
+/FunWithPharo.pdf
