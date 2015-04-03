@@ -1,0 +1,312 @@
+! Tic Tac Toe Game
+
+
+Tic-tac-toe (or Noughts and crosses, Xs and Os) is a paper-and-pencil game for two players, X and O, who take turns marking the spaces in a 3×3 grid. The player who succeeds in placing three respective marks in a horizontal, vertical, or diagonal row wins the game. 
+
++Tic Tac Toe Game >file://figures/t.png|height=50|width=100|label=obj+
+
+So , here we make a Pharo version of this well-known game by using Morph.
+This unit provides a step-by-step approach on how to go about building this simple application.
+
++Tic Tac Toe Game >file://figures/TTT2.png|width=100|label=obj+
+
+A ""game"" package will be built having 3 subclasses :
+- TicTacToe
+-TicTacToeCell
+-TicTacToeModel
+
+
+Initially , we have created ""TicTacToe"" a subclass of the ''Object'' class.
+The subclasses we will make will be combined in the package ""game"" as mentioned in the ''category:'' parameter.
+
+[[[
+Object subclass: #TicTacToe
+instanceVariableNames: 'container model'
+classVariableNames: ''
+poolDictionaries: ''
+category: 'game'
+]]]
+
+A category name is not required in order for the class to work, but you will not be able to access the class to make changes or to look at existing code unless you provide a category name. (The category name used can be a new category name or the name of an existing category.) 
+
+The ''poolDictionaries:'' parameter is seldom used and will not be discussed here, and the category: parameter specifies the category under which this class will be grouped in the system browser. 
+
+As we know, a class encapsulates data values and methods, and every object contains a set of the data values and can receive any of the methods as a message. The data values in each object are specified by providing a set of names of variables whose values will be an object's internal data values. Each object has its own set of these values, and the set of data values for an object represents the object's state (or value). The variables that contain the data values of an object are called the ''instance variables'' for the object, and the ''instanceVariableNames:'' parameter is a list of names, separated by blanks, for the instance variables. In the above code snippet , we have declared ""container"" and ""model"" as two instanceVariables.
+
+The ''classVariableNames:'' parameter lists the identifiers that are the names of variables shared by the class and all of its objects. That is, there is only one set of these, and they are used by the class and all of its objects. Class variables (so called because they belong to the class, of which there is only one, rather than to the objects that are instances of the class) are rarely needed. 
+
+An example of a class variable that could be useful is in a case where we wanted a unique "serial number" to be assigned to each instance of the class as it is created. The variable containing the next available (or last used) serial number would appropriately be a class variable, and each time a new instance (object) is created the serial number would be recorded as an instance variable value in the object and the serial number in the class variable would be incremented. Thus, each object can be serially numbered as it is created (without using one of those nasty global variables!). 
+
+After executing the code above, class ""TicTacToe"" will exist. However, it will have no methods other than those that are inherited from class Object. To make it useful, we must add the methods that are needed for our implementation. 
+
+""Adding methods to classes : ""
+
+The subClasses interact by passing messages through objects only.
+
+[[[
+TicTacToe>>#initialize 
+container := Morph new 
+              layoutPolicy: TableLayout new; 
+              color: Color transparent.
+model := TicTacToeModel new:3.
+self addRows.
+self addControls.
+^self.
+]]]
+
+The notation ''""TicTacToe>>#initialize""'' means that we have a method named ''initialize'' in the subclass ''TicTacToe''. 
+
+In the ""initialize:"" method above , we have a container which is the instance of the class Morph (''Morphic is the name given to Pharo’s graphical interface. ''). We define the varios attributes of the container such as ''layoutPolicy: '' and ''color:''.
+''model'' is another instance of the class ""TicTacToeModel"" which we will be creating further in this example.
+
+""self"" refers to the receiver of the message. It is usually used within a method to send additional messages to the receiver. self is frequently used when it is desired to pass the sender object (self), as a message argument, to a receiver who requires knowledege of the sender or who will in some way manipulate the sender.
+
+[[[
+TicTacToe>>#addRows
+| rowMorph aCell rowCol |
+1 to:3 do:[ :row |
+rowMorph := Morph new layoutPolicy: RowLayout new.
+1 to: 3 do: [ :col |
+aCell := TicTacToeCell new.
+aCell setModel: (model) row: row col: col.
+rowMorph addMorph: aCell.
+].
+container addMorph: rowMorph.
+]
+]]]
+
+The method ""addRows"" (the name is self explanatory) is used to add rows in the Tic Tac Toe grid. It declares temporary (local) variables ""rowMorph"" , ""aCell"" and ""rowCol"" which can't be used beyond this method.
+
+''1 to:3 do:[ :row |''
+
+''rowMorph := Morph new layoutPolicy: RowLayout new.''
+
+''1 to: 3 do: [ :col |''
+
+''aCell := TicTacToeCell new.''
+
+''aCell setModel: (model) row: row col: col.''
+
+''rowMorph addMorph: aCell.''
+
+''].''
+
+
+The above code snippet works as a nested loop that runs thrice for each three rows to create a 3X3 grid as per requirement.
+
+
+[[[
+TicTacToe>>#addControls
+| rowMorph newGameButton exitGameButton |
+rowMorph := Morph new 
+             layoutPolicy: RowLayout new; 
+             color: Color transparent.
+newGameButton := self createCtrlLabelled: 'New'    onClickExecutes: [self restart].
+exitGameButton := self createCtrlLabelled: 'Exit'  onClickExecutes: [container delete].
+rowMorph addMorph: exitGameButton.
+rowMorph addMorph: newGameButton.
+container addMorph: rowMorph.
+]]]
+
+This method adds controls to the game. The local variables are : ""rowMorph"" , ""newGameButton"" and ""exitGameButton"".
+
+''rowMorph'' defines an instance of the class Morph which would be the placeholder for the two control buttons located at the top.
+The two control buttons are defined as ""New"" using the variable ''new GameButton'' which on click would ''restart'' the game , and ""Exit"" using the ''exitGameButton'' which on click would close the game.
+The buttons are created using a method ""createCtrlLabelled"" which we define next.
+
+""rowMorph addMorph: newGameButton"" adds the button to the Morph instance created earlier.
+
+[[[
+TicTacToe>>#createCtrlLabelled: aString onClickExecutes: aBlock
+| aCtrlButton |
+aCtrlButton := SimpleButtonMorph new label: aString.
+aCtrlButton color: (Color black alpha: 0.2).
+aCtrlButton extent: 120@50.
+aCtrlButton on: #click send: #value to: aBlock.
+^aCtrlButton.
+]]]
+
+""TicTacToe>>#createCtrlLabelled: aString onClickExecutes: aBlock"" method makes a simple button using Morph adds label and control to it. 
+
+[[[
+TicTacToe>>#open 
+container openInWindow.
+]]]
+
+The ""open"" method defines as to how the game/TicTacToe class would open. Here we have defined it to open in  a dialog box.
+
+[[[
+TicTacToe>>#restart
+container delete.
+Smalltalk garbageCollect.
+TicTacToe new open.
+]]]
+
+It closes the game and calls for Garbage Collection (Garbage Collection (GC) is a form of automatic memory management. It finds data objects in a program that cannot be accessed in the future and reclaims the resources used by those objects.)
+
+[[[
+SimpleButtonMorph subclass: #TicTacToeCell
+instanceVariableNames: 'parentModel rowNum colNum'
+classVariableNames: ''
+poolDictionaries: ''
+category: 'game'
+]]]
+
+Here a subclass ""TicTacToeCell"" is defind in the ''SimpleButtonMorph'' class with ""parentModel"" , ""rowNum"" and ""colNum"" as the instance variables. This class defines the button for each cell of the grid.
+
+[[[
+TicTacToeCell>>#initialize 
+super initialize.
+self label: ''.
+self extent: 80@80.
+self color: Color yellow .
+self on: #click send: #value to: (self onClickExecutionBlock).
+^self.
+]]]
+
+This ""initialize"" method initialises the button size as 80X80 and gives it the ''color:'' yellow.
+An 'onClick' control is given to the button which then calls the ""onClickExecutionBlock"" method present in the same class.
+
+
+[[[
+TicTacToeCell>>#setModel: ticTacToeModel row: aRow col: aCol
+parentModel := ticTacToeModel.
+rowNum := aRow.
+colNum := aCol.
+]]]
+
+The ""setModel: row: col: "" takes three arguments ""ticTacToeModel"" , ""aRow"" and ""aCol"".
+The ''parentModel'' is assigned ticTacToeModel , ''roNum'' becomes the value of aRow and similiarly ''colNum'' has the value aCol.
+
+[[[
+TicTacToeCell>>#onClickExecutionBlock
+^[
+(self label size) == 0
+ifTrue:[
+self label: (parentModel updateAtRow: rowNum 
+                Col: colNum).
+parentModel checkWinCondition.
+self extent: 80@80.
+].
+ ]
+]]]
+
+This method defines what should happen when each cell in the grid is clicked. At every click , the label of the cell is changed to ""X"" or ""O"" depending upon whose turn it is , the row numbers and coloumn numbers are updated in the ''parentModel'' and ''win condition'' is checked by calling the ""checkWinCondition"" method of the class ""TicTacToeModel"" defined next.
+
+[[[
+Matrix subclass: #TicTacToeModel
+instanceVariableNames: 'filledCellCount currentFill winner'
+classVariableNames: ''
+poolDictionaries: ''
+category: 'game'
+]]]
+
+A subclass ""TicTacToeModel"" is defined in the ''Matrix'' class with ""filledCellCount"" , ""currentFill"" and ""winner"" as the instance variables.
+
+[[[
+TicTacToeModel>>#initialize 
+super initialize.
+filledCellCount := 0.
+currentFill := nil.
+winner := nil.
+]]]
+
+This ""initialize"" methods defines that initially no cell in the grid is filled and there is no ''winner'' as of now.
+
+[[[
+TicTacToeModel>>#updateAtRow: r Col: c
+currentFill == nil
+ifTrue:[ currentFill := 'X'. ]
+ifFalse:[
+currentFill == 'X'
+ifTrue: [ currentFill := 'O'. ]
+ifFalse: [ currentFill := 'X'. ]
+].
+self at: r at: c put: currentFill.
+filledCellCount := filledCellCount + 1.
+^currentFill.
+]]]
+
+The ""updateRowAt: Col: "" method takes two arguments ''r'' and ''c'' used to update the ''currentFill'' and ''filledCellCount'' variables.
+
+[[[
+TicTacToeModel>>#checkWinCondition
+filledCellCount >= 5 "for optimization. Win can occur minimum at 5th turn"
+ifTrue: [
+Transcript show: 'Yes'.
+1 to: 3 do: [:idx |
+self checkWinConditionInRow: idx.
+self checkWinConditionInColumn: idx.
+].
+self checkWinConditionInDiagonals.
+].
+checkWinConditionInRow: rowNum
+|set|
+winner isNil
+ifTrue: [
+set := (self atRow: rowNum) asSet.
+self checkWinConditionInSet: set
+].
+^winner.
+]]]
+
+The method ""checkWinCondition"" is self explanatory. It is used to check if we have a winner or not at every move.
+
+[[[
+TicTacToeModel>>#checkWinConditionInColumn: colNum
+|set|
+winner isNil
+ifTrue: [
+set := (self atColumn: colNum) asSet.
+self checkWinConditionInSet: set.
+].
+^winner.
+]]]
+
+[[[
+TicTacToeModel>>#checkWinConditionInDiagonals
+|set1 set2 |
+winner isNil
+ifTrue: [
+set1 := (self diagonal) asSet.
+set2 := Set newFrom: {(self at: 1 at: 3). (self at: 2 at: 2). (self at: 3 at: 1)} asOrderedCollection.
+self checkWinConditionInSet: set1.
+self checkWinConditionInSet: set2.
+].
+^winner.
+]]]
+
+
+[[[
+TicTacToeModel>>#checkWinConditionInSet: aSet
+aSet size == 1
+ifTrue: [
+(aSet includes: 'X')
+ifTrue: [
+		winner := 'P1'. 
+		Transcript open. 
+		Transcript show: 'Player 1 is the winner!!'.
+	].
+
+(aSet includes: 'O')
+
+ifTrue: [
+		winner := 'P2'.  
+		Transcript open. 
+		Transcript show: 'Player 2 is the winner!!'.
+	].
+].
+]]]
+
+
++Tic Tac Toe Game >file://figures/example2.png|width=100|label=obj+
+
+Now , we have made the game.
+To open the game , simply execute the following in the playground/workspace.
+[[[
+TicTacToe new open.
+]]]
+
+
+The messages : 'Yes' , 'Player ""x"" is the winner' will be displayed in the ''Transcript''.
+
