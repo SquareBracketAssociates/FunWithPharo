@@ -111,7 +111,7 @@ TCMessage >> printOn: aStream
 !!! Building a message from a string 
 We also define two methods to create a message object from a plain string of the form: =='olivier>tinychat is cool'==.
 
-First we create the method ==fromString:== filling up the instance variables of an instance. It will be invoked like this: ==TCMessage new fromString: 'olivier>tinychat est cool'==, then the class method ==fromString:== which will first create the instance.
+First we create the method ==fromString:== filling up the instance variables of an instance. It will be invoked like this: ==TCMessage new fromString: 'olivier>tinychat is cool'==, then the class method ==fromString:== which will first create the instance.
 
 [[[
 TCMessage >> fromString: aString
