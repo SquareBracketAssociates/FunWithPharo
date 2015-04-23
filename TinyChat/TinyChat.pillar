@@ -1,6 +1,6 @@
 ! TinyChat: a Fun and Small Chat Client/Server
 
-Pharo allows the definition of a REST server in a couple of lines of code thanks to the Teapot package, which extends the superb HTTP client/server Zinc developed by BetaNine and given to the community. 
+Pharo allows the definition of a REST server in a couple of lines of code thanks to the Teapot package by zeroflag, which extends the superb HTTP client/server Zinc developed by BetaNine and was given to the community. 
 The goal of this chapter is to make you develop, in five small classes, a client/server chat application with a graphical client.
 This little adventure will familiarize you with Pharo and show the ease with which Pharo lets you define a REST server.
 Developed in a couple of hours, TinyChat has been designed as a pedagogical application. At the end of the chapter, we propose a list of possible improvements. 
@@ -202,7 +202,7 @@ Note how the ==streamContents:== lets us manipulate a stream of characters.
 
 
 !!! The Chat Server
-The core of the server is based on the Teapot REST framework. It supports the sending and receipt of messages.
+The core of the server is based on the Teapot REST framework. It supports the sending and receiving of messages.
 In addition this server keeps a list of messages that it communicates to clients. 
 
 
@@ -387,7 +387,7 @@ TinyChat >> initialize
 !!!! HTTP commands
 
 Now, we define methods to communicate with the server. They are based on the HTTP protocol.
-Two methods will format the request. One, whic does not take argument, builds the requests
+Two methods will format the request. One, which does not take an argument, builds the requests
 ==/messages/add== and ==/messages/count==. The other has an argument used to get the message given a position.
 
 [[[
@@ -617,7 +617,7 @@ TCConsole class >> attach: aTinyChat
 
 +Server access.>file://figures/messages.png|width=60|label=messages+
 
-Now you can chat with your server. The example resets the server and open two clients.
+Now you can chat with your server. The example resets the server and opens two clients.
 
 [[[
 | tco tcs |
