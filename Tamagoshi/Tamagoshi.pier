@@ -57,7 +57,7 @@ Tamagoshi new openInHand
 ]]]
 
 
-+A square and rudimentary tamagoshi>file://figures/squareTamagoshi|width=50|label=squareTamagoshi+
++A square and rudimentary tamagoshi>file://figures/squareTamagoshi.pdf|width=50|label=squareTamagoshi+
 
 
 !!!!Create a protocol named ==stepping==
@@ -85,7 +85,7 @@ step
 !!!! Open a Transcript
 
 
-+helloInTranscript>file://figures/helloInTranscript|width=50|label=squareTamagoshi+
++helloInTranscript>file://figures/helloInTranscript.pdf|width=50|label=helloInTranscript+
 
 
 
@@ -99,20 +99,20 @@ Tamagoshi new openInHand
 To stop bring halos and click on cross it should delete the tamagoshi
 
 
-+TamaWithHalo>file://figures/TamaWithHalo|width=50|label=TamaWithHalo+
++TamaWithHalo>file://figures/TamaWithHalo.pdf|width=50|label=TamaWithHalo+
 
 
 To interact with it
 - select the menu inspect 
 
-+TamaWithHalo>file://figures/TamaWithInspectMenu|width=50|label=TamaWithInspectMenu+
++TamaWithHalo>file://figures/TamaWithInspectMenu.pdf|width=50|label=TamaWithInspectMenu+
 
 
 
-+TamagoshiWithInspector>file://figures/TamagoshiWithInspector|width=50|label=TamagoshiWithInspector+
++TamagoshiWithInspector>file://figures/TamagoshiWithInspector.pdf|width=50|label=TamagoshiWithInspector+
 
 
-+TamaWithInspectorAndInstruction>file://figures/TamaWithInspectorAndInstruction|width=50|label=TamaWithInspectorAndInstruction+
++TamaWithInspectorAndInstruction>file://figures/TamaWithInspectorAndInstruction.pdf|width=50|label=TamaWithInspectorAndInstruction+
 
 
 To open an inspector when we create a tamagoshi we can send the message inspect as follows: 
@@ -151,12 +151,12 @@ Tamagoshi new openInHand inspect
 you should get the following:
 
 
-+TamaWithName>file://figures/TamaWithName|width=50|label=TamaWithName+
++TamaWithName>file://figures/TamaWithName.pdf|width=50|label=TamaWithName+
 
 
 
 
-+withPopUp>file://figures/withPopUp|width=50|label=withPopUp+
++withPopUp>file://figures/withPopUp.pdf|width=50|label=withPopUp+
 
 
 
@@ -167,7 +167,7 @@ UIManager default request:  'Give a name to your tamagoshi'
 ]]]
 
 
-+requestInTranscript>file://figures/requestInTranscript|width=50|label=requestInTranscript+
++requestInTranscript>file://figures/requestInTranscript.pdf|width=50|label=requestInTranscript+
 
 
 [[[
@@ -186,12 +186,12 @@ step
 
 
 
-+inspectorWithFifiPrompt>file://figures/inspectorWithFifiPrompt|width=50|label=inspectorWithFifiPrompt+
++inspectorWithFifiPrompt>file://figures/inspectorWithFifiPrompt.pdf|width=50|label=inspectorWithFifiPrompt+
 
 
 
 
-+promptWithNil>file://figures/promptWithNil|width=50|label=promptWithNil+
++promptWithNil>file://figures/promptWithNil.pdf|width=50|label=promptWithNil+
 
 
 [[[
@@ -227,7 +227,7 @@ stopLiving
 
 
 
-+LargerRounder>file://figures/LargerRounder|width=50|label=LargerRounder+
++LargerRounder>file://figures/LargerRounder.pdf|width=50|label=LargerRounder+
 
 
 
@@ -245,7 +245,7 @@ drawOn: aCanvas
 			borderColor: Color white.
 ]]]
 
-+WithEllipse>file://figures/WithEllipse|width=50|label=WithEllipse+
++WithEllipse>file://figures/WithEllipse.pdf|width=50|label=WithEllipse+
 
 
 
@@ -275,7 +275,7 @@ drawOn: aCanvas
 	self eyesOn: aCanvas
 ]]]
 
-+justEyes>file://figures/justEyes|width=50|label=justEyes+
++justEyes>file://figures/justEyes.pdf|width=50|label=justEyes+
 
 
 
@@ -304,7 +304,7 @@ drawOn: aCanvas
 	self mouthOn: aCanvas.
 ]]]
 
-+A smiling tamagoshi.>file://figures/Smiling|width=50|label=Smiling+
++A smiling tamagoshi.>file://figures/Smiling.pdf|width=50|label=Smiling+
 
 !! Eating Behavior
 
@@ -346,7 +346,7 @@ tummyOn: aCanvas
 ]]]
 
 
-+withbBelly>file://figures/withbBelly|width=50|label=withbBelly+
++withbBelly>file://figures/withbBelly.pdf|width=50|label=withbBelly+
 
 
 do not forget to change the drawOn: method to invoke the tummyOn: method.
@@ -371,7 +371,7 @@ eat
 
 
 
-+Now we show the food items in the tamagoshi' tummy>file://figures/eating|width=50|label=eating+
++Now we show the food items in the tamagoshi' tummy>file://figures/eating.pdf|width=50|label=eating+
 
 
 
@@ -558,7 +558,7 @@ hungryMouthOn: aCanvas
 ]]]
 
 
-+Our tamagoshi shows now that he is hungry>file://figures/hungry|width=50|label=hungry+
++Our tamagoshi shows now that he is hungry>file://figures/hungry.pdf|width=50|label=hungry+
 
 Now we can change a bit the messages send by our tamagoshi. 
 
@@ -670,7 +670,7 @@ drawOn: aCanvas
 ]]]
 
 
-+sleeping>file://figures/sleeping|width=50|label=sleeping+
++sleeping>file://figures/sleeping.pdf|width=50|label=sleeping+
 
 
 
