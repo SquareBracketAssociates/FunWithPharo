@@ -19,3 +19,6 @@ auto/
 /pillar
 /FunWithPharo.tex
 /FunWithPharo.pdf
+/pillarPostExport.sh
+/book-result/Captcha/Captcha.html
+/book-result

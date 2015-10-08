@@ -1,0 +1,14 @@
+%!TEX TS-program = lualatex
+% -*- mode: LaTeX; -*-
+
+\documentclass[a4paper,10pt,twoside]{book}
+\usepackage[
+        ignoreheadfoot
+]{geometry}
+\usepackage{import}
+\subimport{root/support/latex/}{common.tex}
+\setboolean{lulu}{false}
+
+{{{content}}}
+
+

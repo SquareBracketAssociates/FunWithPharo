@@ -11,49 +11,36 @@
 % Allows book to be generated in multiple formats.
 %=============================================================
 %:Packages
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}  %%%%%% really important to get the code directly in the text!
-\usepackage{lmodern}
-%\usepackage[scaled=0.85]{bookmanx} % needs another scale factor if used with \renewcommand{\sfdefault}{cmbr}
-\usepackage{palatino}
-\usepackage[scaled=0.9]{helvet}
+\usepackage{fontspec}
+
+\setmainfont[%
+  Path = ../support/latex/fonts/ ,
+  UprightFont = *-Regular ,
+  BoldFont = *-Bold ,
+  ItalicFont = *-Italic ,
+  BoldItalicFont = *-BoldItalic
+]{FiraSans}
+
+\setmonofont[Path = ../support/latex/fonts/]{FiraMono-Regular.otf}
+\setsansfont[Path = ../support/latex/fonts/]{FiraSans-Regular.otf}
+
 \usepackage[protrusion,expansion=false]{microtype}
 \usepackage{graphicx}
 \usepackage{theorem}
-\usepackage[english]{babel}
-% ON: pdfsync breaks the use of p{width} for tabular columns!
-\ifdefined\usepdfsync\usepackage{pdfsync}\fi % Requires texlive 2007
-%=============================================================
-%:More packages
-%Stef should check which ones are used!
-%\usepackage{picinpar}
-%\usepackage{layout}
-%\usepackage{color}
-%\usepackage{enum}
-%\usepackage{a4wide}
-% \usepackage{fancyhdr}
+\usepackage{polyglossia}
+\setdefaultlanguage{english}
 \usepackage{ifthen}
 \usepackage{float}
 \usepackage{longtable}
-\usepackage{makeidx}
-\usepackage[nottoc]{tocbibind}
 \usepackage{multicol}
 \usepackage{booktabs}	% book-style tables
-\usepackage{topcapt}	% enables \topcaption
 \usepackage{multirow}
 \usepackage{tabularx}
-%\usepackage[bottom]{footmisc}
 \usepackage{xspace}
 \usepackage{alltt}
 \usepackage{amssymb,textcomp}
 \usepackage[usenames,dvipsnames]{color}
-%\usepackage{colortbl}
-\usepackage[hang]{subfigure}\makeatletter\def\p@subfigure{\thefigure\,}\makeatother
-\usepackage{rotating}
-\usepackage{enumitem}	% apb: allows more control over tags in enumerations
-\usepackage{verbatim}     % for comment environment
 \usepackage{varioref}	% for page references that work
-\labelformat{footnote}{\thechapter--#1} % to distinguish citations from jurabib
 \usepackage{needspace}
 \usepackage{isodateo} % enable \isodate
 \usepackage[newparttoc,pagestyles]{titlesec}
@@ -88,22 +75,6 @@
 \newboolean{lulu}
 \setboolean{lulu}{false}
 \newcommand{\ifluluelse}[2]{\ifthenelse{\boolean{lulu}}{#1}{#2}}
-%=============================================================
-%:Names
-\newcommand{\SUnit}{SUnit\xspace}
-\newcommand{\sunit}{SUnit\xspace}
-\newcommand{\xUnit}{$x$Unit\xspace}
-\newcommand{\JUnit}{JUnit\xspace}
-\newcommand{\st}{Smalltalk\xspace}
-\newcommand{\pharo}{Pharo\xspace} % Use this, not \Pharo
-%\newcommand{\sqmap}{SqueakMap\xspace}
-\newcommand{\squeak}{Squeak\xspace} % use this, not \Squeak or \sq
-\newcommand{\sqsrc}{SqueakSource\xspace}
-\newcommand{\sbe}{\url{http://SqueakByExample.org}\xspace}
-\newcommand{\pharoweb}{\url{http://pharo-project.org}\xspace}
-\newcommand{\pbe}{\url{http://PharoByExample.org}\xspace}
-\newcommand{\sba}{\url{http://SquareBracketAssociates.org}\xspace}
-\newcommand{\bam}{\lct{Bounc\-ing\-Atoms\-Morph}\xspace}
 %=============================================================
 %:Markup macros for proof-reading
 \usepackage[normalem]{ulem} % for \sout
@@ -401,7 +372,7 @@ Damien Pollet},
     {CARET}{\^}1
     {UNDERSCORE}{\_}1
     {\\st}{Smalltalk}9 % convenience -- in case \st occurs in code
-    % {'}{{\textquotesingle}}1 % replaced by upquote=true in \lstset
+    {'}{{\textquotesingle}}1 % replaced by upquote=true in \lstset
     %{_}{{$\leftarrow$}}1
     {>>>}{{\sep}}1
     %{^}{{$\uparrow$}}1
@@ -430,16 +401,12 @@ Damien Pollet},
 % In-line code (literal)
 % Normally use this for all in-line code:
 % \newcommand{\ct}{\lstinline[mathescape=false,backgroundcolor=\color{white},basicstyle={\sffamily\upshape}]}
-\newcommand{\ct}[1]{{\sffamily\textup{#1}}}
-% apb 2007.8.28 added the \upshape declaration to avoid getting italicized code in \dothis{ } sections.
-% In-line code (latex enabled)
+\newcommand{\ct}[1]{{\texttt{\textup{#1}}}}
+% \upshape declaration to avoid getting italicized code in \dothis{ } sections
 % Use this only in special situations where \ct does not work
-% (within section headings ...):
-\newcommand{\lct}[1]{{\textsf{\textup{#1}}}}
-% Use these for system categories and protocols:
-\newcommand{\scat}[1]{\emph{\textsf{#1}}\xspace}
-\newcommand{\pkg}[1]{\emph{\textsf{#1}}\xspace}
-\newcommand{\prot}[1]{\emph{\textsf{#1}}\xspace}
+% (e.g., within section headings):
+\newcommand{\lct}[1]{{\texttt{\textup{#1}}}}
+
 % Code environments
 % NB: the arg is for tests
 % Only code and example environments may be tests
@@ -599,13 +566,6 @@ Damien Pollet},
 \setlength{\methodindent}{0.2cm}
 \settowidth{\methodwordlength}{\ M\'ethode\ }
 %=============================================================
-%:Smalltalk macros
-%\newcommand{\sep}{{$\gg$}}
-\newcommand{\sep}{\mbox{>>}}
-\newcommand{\self}{\lct{self}\xspace}
-\newcommand{\super}{\lct{super}\xspace}
-\newcommand{\nil}{\lct{nil}\xspace}
-%=============================================================
 % be less conservative about float placement
 % these commands are from http://www.tex.ac.uk/cgi-bin/texfaq2html?label=floats
 \renewcommand{\topfraction}{.9}
@@ -625,7 +585,9 @@ Damien Pollet},
 \newcommand{\chapterauthor}[1]{\emph{with the participation of:\\#1}\\}
 \newcommand{\chapterwritten}[1]{\emph{written by:\\#1}\\}
 
+\newcommand{\authorjohan}{\contact{Johan Fabry}{jfabry@dcc.uchile.cl}}
 \newcommand{\authornoury}{\contact{Noury Bouraqadi}{Noury.Bouraqadi@mines-douai.fr}}
+\newcommand{\authorluc}{\contact{Luc Fabresse}{luc.fabresse@mines-douai.fr}}
 \newcommand{\authordamienc}{\contact{Damien Cassou}{damien.cassou@gmail.com}}
 \newcommand{\authoroscar}{\contact{Oscar Nierstrasz}{oscar.nierstrasz@acm.org}}
 \newcommand{\authorsteph}{\contact{St\'ephane Ducasse}{stephane.ducasse@inria.fr}}
@@ -655,5 +617,9 @@ Damien Pollet},
 %\newenvironment{note}{\newline Note:}{}
 \newenvironment{note}{\begin{center}\begin{minipage}{8cm}\hrule\vspace{0.2cm}
 \textbf{Note:}}{\vspace{0.3cm}\hrule\end{minipage}\end{center}}
+
 \newenvironment{todo}{\begin{center}\begin{minipage}{8cm}
-\textbf{Book Todo:}}{\end{minipage}\end{center}}
+\textbf{You should do:}}{\end{minipage}\end{center}}
+
+\newenvironment{authorToDo}{\begin{center}\begin{minipage}{8cm}
+\textbf{SHOULD FIX:}}{\end{minipage}\end{center}}
