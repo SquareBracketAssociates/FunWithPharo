@@ -1,0 +1,95 @@
+[[[	
+ProtoObject subclass: #AActor
+	instanceVariableNames: 'mailbox behavior'
+	classVariableNames: ''
+	category: 'Actalk'
+]]]
+
+- ==mailbox== represents the queue of message. It is an instance of 
+
+- ==behavior== represents the behavior with processes the message. It will be an instance of subclass of the class ActorBehavior (see below).
+
+[[[
+AActor>>initialize
+	mailbox := SharedQueue new
+]]]
+
+[[[
+AActor>>asynchronousSend: aMessage
+	mailbox nextPut: aMessage
+]]]
+
+[[[
+AActor>>initializeBehavior: aBehavior
+	behavior := aBehavior.
+	behavior initializeAself: self.
+]]]
+
+[[[
+AActor>>mailbox
+	^ mailbox
+]]]
+
+[[[
+AActor>>doesNotUnderstand: aMessage
+	^ self asynchronousSend: aMessage
+]]]
+
+[[[
+AActor class>>behavior: aBehavior
+	^ self new initializeBehavior: aBehavior	
+]]]
+
+
+
+!! Actor behavior
+
+[[[
+Object subclass: #AActorBehavior
+	instanceVariableNames: 'aself'
+	classVariableNames: ''
+	category: 'Actalk'
+]]]
+
+[[[
+AActorBehavior>>initializeAself: anActor
+	aself := anActor.
+	self setProcess.
+]]]
+
+[[[
+AActorBehavior>>set
+	[ [ true ] whileTrue: [ self acceptNextMessage ] ] fork 
+]]]
+
+[[[
+AActorBehavior>>acceptMessage: aMessage
+	self perform: aMessage selector withArguments: aMessage arguments
+]]]
+
+
+A special message to create actor. 
+[[[
+AActorBehavior>>actor
+	^ AActor behavior: self
+]]]
+
+
+!! First example
+
+[[[
+AActorBehavior subclass: #Counter
+	instanceVariableNames: 'contents'
+	classVariableNames: ''
+	category: 'Actalk'
+]]]
+
+[[[
+Counter>>incr
+	contents := contents + 1
+]]]
+
+[[[
+Counter>>reset
+	contents := 0
+]]]
