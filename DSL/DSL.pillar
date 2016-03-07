@@ -18,7 +18,7 @@ Object subclass: #Dice
 	package: 'Dice'
 ]]]
 
-In the ==initialize== category, define the method ==initialize== as follows. It simply set the default number of faces to 6. 
+In the ==initialize== category, define the method ==initialize== as follows. It simply sets the default number of faces to 6. 
 
 [[[
 Dice >> initialize 
@@ -282,7 +282,7 @@ DiceHandleTest>>testSimpleHandle
 	self assert: 2 D20 diceNumber = 2.
 ]]]
 
-Verify that the test is not working! It is much more satisfactory to get a test running when it was not working before. Now define the method ==D20== with a category name that is ==*Dice== (if you named your package Dice). This method simply creates a new dice handle, add the correct number of dice to this handle and return it.
+Verify that the test is not working! It is much more satisfactory to get a test running when it was not working before. Now define the method ==D20== with a category name that is '*Dice' (if you named your package Dice). This method simply creates a new dice handle, add the correct number of dice to this handle and return it.
 
 [[[
 Integer>>D20
