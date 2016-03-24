@@ -8,7 +8,7 @@ Developed in a couple of hours, TinyChat has been designed as a pedagogical appl
 TinyChat has been developed by O. Auverlot and S. Ducasse with a lot of fun. 
 
 !! Objectives and Architecture
-We are going to build a chat server and one graphical client as shown in Figure *tinychatclient*. 
+We are going to build a chat server and one graphical client as shown in Figure *@tinychatclient*. 
 
 +Chatting with TinyChat>file://figures/tinychatclient.png|width=80|label=tinychatclient+
 
@@ -320,7 +320,7 @@ First let us begin by starting it:
 	TCServer startOn: 8181
 ]]]
 
-Now we can verify that it is running either with a web browser (figure *running*), or with a Zinc expression as follows: 
+Now we can verify that it is running either with a web browser (figure *@running*), or with a Zinc expression as follows: 
 
 [[[
 ZnClient new url: 'http://localhost:8181/messages/count' ; get
@@ -533,7 +533,7 @@ TinyChat >> start
 
 !!!! User Interface
 
-The user interface is composed of a window with a list and an input field as shown in Figure *tinychatclient*. 
+The user interface is composed of a window with a list and an input field as shown in Figure *@tinychatclient*. 
 
 [[[
 ComposableModel subclass: #TCConsole
