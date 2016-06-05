@@ -1,0 +1,99 @@
+import java.io.*;
+public class GOL{
+
+	public static String boardToString (boolean[][] board, int xsize, int ysize){
+		StringBuffer sb= new StringBuffer();  // used to print out the board at the end
+		for (int i=0;i<xsize;i++){
+			for (int j=0;j<ysize;j++){
+				if (board [i][j]){
+					sb.append('*');
+				}else{
+					sb.append(' ');
+				}
+			}
+		sb.append("\n");	
+		}
+		return sb.toString();
+	}
+	
+	public static boolean[][] strToBoolMatrix (String str, int xsize, int ysize){
+		boolean [][] board = new boolean[xsize][ysize];  // converts an input string into the
+		for (int i=0;i<xsize; i++){                      // boolean[][] used internally
+			for (int j=0; j<ysize; j++){
+				board[i][j] = str.charAt((i*xsize)+j) != '0';
+			}
+		}
+		return board;
+	}
+
+	public static int mod (int x, int m){ // deals with java's % returning negative vals for 
+		m = Math.abs(m);                   // negative inputs
+		return (x % m + m) % m;
+	} 
+
+	public static int getNeighborCount(boolean[][] board, int x, int y, int xsize, int ysize){
+		int nc = 0;   // this function rather messily counts up the neighbors
+		
+		if (board[mod(x+1,xsize)][y]){
+			nc++;
+		}
+		if (board[mod(x+1,xsize)][mod(y+1, ysize)]){
+			nc++;
+		}
+		if (board[x][mod(y+1,ysize)]){
+			nc++;
+		}
+		if (board[x][mod(y-1,ysize)]){
+			nc++;
+		}
+		if (board[mod(x+1,xsize)][mod(y-1,ysize)]){
+			nc++;
+		}
+		if (board[mod(x-1,xsize)][y]){
+			nc ++;
+		}
+		if (board[mod(x-1,xsize)][mod(y-1,ysize)]){
+			nc ++;
+		}
+		if (board[mod(x-1,xsize)][mod(y+1,ysize)]){
+			nc ++;
+		}
+		return nc;
+	}
+
+
+
+	public static boolean getDot(boolean[][] board, int x, int y, int xsize, int ysize){
+		// this function applies the rules of the game on one square
+			
+		return board[x][y] && getNeighborCount(board, x,y,xsize,ysize) == 2
+			|| getNeighborCount(board,x,y,xsize,ysize) == 3;
+	}
+
+	
+	public static void main(String[] args) throws java.io.FileNotFoundException, java.io.IOException{
+		int xsize = Integer.parseInt(args[0]);  // takes board size off command line
+		int ysize = Integer.parseInt(args[1]);
+		int gen = Integer.parseInt(args[2]);    // number of generations
+		FileReader fr = new FileReader(args[3]); // will read in board from a file
+		BufferedReader br= new BufferedReader(fr);
+		StringBuffer sb = new StringBuffer();
+		String line = new String(br.readLine());
+		while(line != null){ // reading file
+			sb.append(line);
+			line = br.readLine();
+		}
+		String s = sb.toString();
+		boolean[][] board = strToBoolMatrix(s,xsize,ysize); // this is the game board
+		for (int i=0; i<gen; i++){  // loops through the generations
+			boolean[][] next = new boolean[xsize][ysize];  // empty board
+			for (int j=0;j<xsize;j++){     // loops through x-axis for computing the next generation
+				for (int k=0; k< ysize; k++){ // loops through y-axis
+					next[j][k] = getDot(board,j,k,xsize,ysize); 
+				}
+			}
+			board = next;    // use the 'next' array as the new 'board' array
+		}
+		System.out.println(boardToString(board,xsize,ysize)); // prints the board
+	}
+}
