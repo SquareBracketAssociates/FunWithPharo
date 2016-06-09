@@ -7,42 +7,45 @@ You will define step by step an application that simulates a simple Local Area N
 
 !! Simulating the LAN
 
-Here is a simple LAN definition: 
+Before starting to implement the objects that we will need let us start looking at the creation of a network and packets that will transit into it. Here is a simple LAN definition as described by Figure *@lan*.
+
++A simple LAN.>file://figures/lan.png|width=50|label=lan+
 
 [[[
 | mac pc node1 node2 igPrinter |
-
 "create the nodes, workstations, printers and fileserver"
 mac := Workstation new name: #mac.
 pc := LNWorkstation new name: #pc.
 node1 := LNNode new name: #Node1.
 node2 := LNNode new name: #Node2.
 igPrinter := LNPrinter new name: #igPrinter.
-
 "connect the different LNNodes."
 mac nextNode: node1.
 node1 nextNode: igPrinter.
 igPrinter nextNode: node2.
 node2 nextNode: pc.
 pc nextNode: mac.
-
 "create a LNPacket and start simulation"
 packet := LNPacket new
           addressee: #IGPrinter;
           contents: 'This Packet travelled around to the printer IGPrinter.
-
-  mac emit: LNPacket.
+mac emit: LNPacket.
 ]]]
 
-What you should see is that we have different kinds of nodes: simple node, workstation and printer. 
-There are connected together to form a circular list of nodes. Then we can create a packet and emit it inside the network. 
-
+What you should see is that we have different kinds of nodes: simple node, workstation and printer. There are connected together to form a circular list of nodes. Then we can create a packet and emit it inside the network. What is happening is that a packet will visit node after node to find the node it has been sent too. 
 
 So we will build now piece by piece such system.
 
 !! Creating the class LNNode
 
-The class ==LNNode== will be the root of all the entities that form a LAN: a printer, a server, and a computer. This class contains the common behavior for all nodes. As a network is defined as a linked list of nodes, a node should always know its next node. A node should be uniquely identifiable with a name. We represent the name of a node using a symbol (because symbols are unique in Pharo) and the next node using a node object. It is the node responsibility to send and receive packets of information. In next section we will define the class that represents packets.
+The class ==LNNode== will be the root of all the entities that form a LAN: a simple node but also printer, a server, and a computer. This class contains the common behavior for all nodes: 
+
+The first behavior that a node should have is to know the next node to which it is linked. This way it can then pass information it receives but that it is not for it to its following node. 
+This way a network is defined as a linked list of nodes, a node pointing to its next node. 
+
+The second behavior a node should have is that it should be uniquely identifiable by an identifier or a unique name. 
+
+To fullfil such requiremnts we represent the name of a node using a symbol (because symbols are unique in Pharo) and the next node using a node object.  It is the node responsibility to send and receive packets of information and we will come back on it once packets are introduced. In next section we will define the class that represents packets.
 
 [[[
 LNNode inherits from Object
@@ -59,15 +62,16 @@ Responsibility:
 Create a new package ==LAN==, and create a subclass of ==Object== called ==LNNode==, with two instance variables: ==name== and ==nextLNNode==.
 
 !!!Exercise: Accessors
-  Create accessors and mutators for the two instance variables. Document the mutators to inform users that the argument passed to ==name:== should be a ==Symbol==, and the arguments passed to ==nextNode:== should be a LNNode. 
+Create accessors and mutators for the two instance variables. Document the mutators to inform users that the argument passed to ==name:== should be a ==Symbol==, and the arguments passed to ==nextNode:== should be a LNNode. 
 
-!!!Exercise: ==hasNextNode==   
+!!!Exercise: hasNextNode
 Define a method called ==hasNextNode== that returns whether the receiver has a next LNNode or not. 
 
-!!!Exercise: ==printOn:==   
+!!!Exercise: printOn:
+
 Create an instance method named ==printOn:== that puts the class name and name variable on the argument ==aStream==. Include my next node's name ONLY if there is a next node. Hint: look at the method ==printOn:== from previous exercises or other classes in the system, and consider that the instance variable ==name== is a symbol and ==nextNode== is a ==LNNode==. The expected ==printOn:== method behavior is described by the following code:
 
-[[[language=smalltalk
+[[[
 (LNNode new
    name: #LNNode1 ;
    nextLNNode: (LNNode new name: #PC1)) printString
@@ -75,28 +79,29 @@ Create an instance method named ==printOn:== that puts the class name and name v
 LNNode named: 'LNNode1' connected to: PC1
 ]]]
 
-
 !!!Exercise: sending/receiving
 A ==LNNode== has two basic messages to send and receive packets. 
 
-When a packet is sent to a node, the node has to accept the packet, and send it on. Note that with this simple behavior the packet can 
-loop infinitely in the LAN. We will propose some solutions to this issue later. To implement this behavior, you should add a protocol ==send-receive==, and implement the following two methods:
+When a packet is sent to a node, the node has to accept the packet, and send it on. Note that with this simple behavior the packet can loop infinitely in the LAN. We will propose some solutions to this issue later. 
 
-[[[language=smalltalk
-Node >> accept: aPacket
+
+To implement this behavior, you should add a protocol ==send-receive==, and implement the following two methods:
+
+[[[
+LNNode >> accept: aPacket
     "Having received aPacket, send it on. This is the default behavior. My subclasses will probably override me to do something special"
     self send: aPackage 
 ]]]
 
 
-[[[language=smalltalk	
-Node >> send: aPacket
-     "Precondition: self has a nextNode"
-     
-     self name trace.
-	' sends a packet to: ' trace.
-	 self nextNode name traceCr. 
-	 self nextNode accept: aPacket.
+[[[
+LNNode >> send: aPacket
+    "Precondition: self has a nextNode"
+
+    self name trace.
+    ' passes a packet to: ' trace.
+    self nextNode name traceCr. 
+    self nextNode accept: aPacket.
 ]]]
 
 Note that 
@@ -104,14 +109,14 @@ Note that
 - ==traceCr== has a similar behavior but adds a carriage return at the end. 
 
 
-!! Creating the class ==LNPacket==
+!! Creating the class LNPacket
 
 A package is an object that represents a piece of information that is sent from nodes to nodes. So the responsibilities of this object are to allow us to define the originator of the packet emission, the address of the receiver and the contents.
 
 [[[
-	LNPacket inherits from Object
-	Collaborators: LNNode
-	Responsibility:
+LNPacket inherits from Object
+Collaborators: LNNode
+Responsibility:
 		addressee - returns the name of the node to which the packet is sent.
 		contents - describes the contents of the message sent.
 		originator - references the node that sent the packet.
