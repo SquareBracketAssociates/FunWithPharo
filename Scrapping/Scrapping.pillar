@@ -1,0 +1,123 @@
+{{{"title" = "Scrapping HTML"}}}
+
+Internet pages provide a lot of information and often you would like to be able to access and manipulate it in another form than HTML: HTML is just plain verbose. What you would like is to get access to only the information you are interested in and get the results in a form that you can easily build more software. This is the objectives of HTML scrapping. In Pharo you can scrap web pages using different libraries such as XMLParser and SOUP. 
+In this chappter we will show you how we can do that using XMLParser to scrap and JSON to collect information. 
+This chapter has been originally written by Peter Kenny. 
+
+!! An Example
+
+
+
+!! Getting started
+
+- Load XML packages
+- Load NeoJSON
+
+
+!!! Food
+An example 
+https://ndb.nal.usda.gov/ndb/foods?format=&count=&max=100&sort=&fgcd=&manu=&lfacet=&qlookup=&offset=0&order=desc
+
+!! First cut 
+
+
+First read in the table of ingredients (first 100 rows only) as in the spec
+
+[[[
+ingredientsXML := XMLHTMLParser parseURL: 'https://ndb.nal.usda.gov/ndb/foods?format=&count=&max=100&sort=&fgcd=&manu=&lfacet=&qlookup=&offset=0&order=desc'.
+]]]
+
+@@todo propose expression for files
+
+The detail rows are in the body of the table in the second div node whose class is 'wbox'
+
+[[[
+ingredientRows :=(ingredientsXML xPath: '//div[@class=''wbox''][2]//tbody/tr').
+]]]
+
+Extract the text content of the three cells in each row
+
+[[[
+ingredientCells := ingredientRows collect: 
+	[:row| (row xPath: 'td') collect: 
+		[ :cell| cell  contentString]].
+]]]
+
+
+To prepare for export to JSON, it is handy to put the three fields in a Dictionary indexed by their field names
+
+[[[
+ingredientsJSON := ingredientCells collect: 
+	[ :row| { 'nbd_no' -> (row at: 1). 
+				'full-name' -> (row at: 2). 
+				'food-group' -> (row at: 3)} asDictionary ].
+]]]
+
+If we 'do it and go' this line, we can see the JSON layout. In this demo, I have not bothered with exporting to a JSON file; it is easier to look at it in a Playground.
+
+[[[
+neoJSONWriter toStringPretty: ingredientsJSON first.
+]]]
+
+We can find the address of the ingredient details from the href in the first cell
+
+[[[
+ingredientAddress := ingredientRows collect: 
+	[ :row| (row xPath:'td[1]/a/@href') first value copyUpTo: $?].
+]]]
+
+!! Improving the process
+
+To show how to process the ingredient details, we have just processed the first ingredient in the file. The production version would have to run through all the rows in the ==ingredientAddress== collection.
+
+[[[
+ingredientDetailsXML := XMLHTMLParser parseURL: 'https://ndb.nal.usda.gov',ingredientAddress first,'?format=Full'.
+]]]
+
+The ingredient factors (if any) are found in the second div node within the div whose class is =='dialog'==. We do not need to worry about the case of zero factors; if XPath fails to find a match, it returns an empty results collection without complaint.
+
+[[[
+ingredientFactors := (ingredientDetailsXML xPath: '//div[@class =''dialog'']/div[2]/span') collect: 	[:cell| cell contentString trim].
+]]]
+
+
+Again we prepare for JSON export by forming a dictionary
+
+[[[
+factorsJSON := Dictionary new.
+1 to: ingredientFactors size by: 2 do: 
+	[ :index| factorsJSON at: (ingredientFactors at: index) put: (ingredientFactors at: index + 1) ]
+
+NeoJSONWriter toStringPretty: factorsJSON.
+]]]
+
+
+!! 
+For this demo, we have just collected the details of the first nutrient group - 'Proximates'. I am not clear what you want the full output to be - do you want to preserve the grouping structure, or just list all nutrients? There may be an easier way of identifying all nutrient rows, other than listing all the possible id strings.
+
+[[[
+nutrientDetails := (ingredientDetailsXML xPath: '//tr[@id=''Proximates-0'']') collect: 
+	[ :row | ((row xPath: 'td') first: 3) collect: 
+		[ :cell |cell contentString trim ] ].
+]]]
+
+Note that the text content has to be trimmed, because the text in the XML file contains a lot of leading white spaces. I'm not sure if this is in the original web page, or if it is an artefact of the XMLHTMLParser.
+
+Again form a dictionary for each row. The collection of nutrient dictionaries will later be embedded in the ingredient dictionary.
+
+[[[
+nutrientJSON := nutrientDetails collect: 
+	[ :row| { 'nutrient'-> (row at: 1). 
+				'unit'-> (row at: 2). 
+				'per100g' -> (row at: 3) } asDictionary ].
+
+NeoJSONWriter toStringPretty: nutrientJSON.
+]]]
+
+
+"Finally assemble all the information for the first ingredient as a JSON file. NeoJSON automatically takes care of embedding dictionaries within a collection within a dictionary."
+NeoJSONWriter toStringPretty: 
+	((ingredientsJSON first) 
+		at: 'factors' put: factorsJSON; 
+		at: 'nutrients' put: nutrientJSON; 
+		yourself).

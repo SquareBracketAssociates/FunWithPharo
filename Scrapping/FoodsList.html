@@ -1,0 +1,1796 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+ <html lang="en" class="no-js"><!--<![endif]-->
+ 
+    <head>
+     
+        <title>Foods List</title>
+        <link rel="shortcut icon" href="/ndb/static/images/favicon.ico" type="image/x-icon" />
+    
+        
+<link rel="stylesheet" href="/ndb/static/css/main.css" />
+ 
+  <script language="javascript" id="_fed_an_ua_tag" src="https://data.nal.usda.gov/sites/all/themes/usda/usda_radix_theme/assets/javascripts/Universal-Federated-Analytics.1.0.js?agency=USDA&subagency=ARS-NAL"></script><script type="text/JavaScript"> 
+		 var _gaq = _gaq || [];
+		 // NAL 
+		  _gaq.push(['_setAccount', 'UA-28627214-1']);
+		  _gaq.push(['_setDomainName', 'nal.usda.gov']);
+		  _gaq.push(['_setAllowLinker', true]);
+		  _gaq.push(['_trackPageview']);
+		 //
+		// _gaq.push(['_setAccount', 'UA-3876418-1']);
+		//  _gaq.push(['_trackPageview']);
+		  // for NDB
+		  _gaq.push(['_setAccount', 'UA-36442725-1']);
+		  _gaq.push(['_trackPageview']);
+			// USDA servers
+		  _gaq.push(['_setAccount', 'UA-466807-3']);
+		  _gaq.push(['_setDomainName', 'usda.gov']);
+		  _gaq.push(['_setAllowLinker', true]);
+		  _gaq.push(['_trackPageview']);
+		  //
+		  _gaq.push(['a._setAccount', 'UA-27627304-18']);
+		  _gaq.push(['a._setDomainName', 'usda.gov']);
+		  _gaq.push(['a._setAllowLinker', true]);
+		  _gaq.push(['a._trackPageview']);
+			//
+		  _gaq.push(['b._setAccount', 'UA-27627304-1']);
+		  _gaq.push(['b._setDomainName', 'usda.gov']);
+		  _gaq.push(['b._setAllowLinker', true]);
+		  _gaq.push(['b._trackPageview']);
+		 
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 
+		'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 
+		'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; 
+		s.parentNode.insertBefore(ga, s);
+		  })();
+	</script> 
+      
+     
+           
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="layout" content="main"/>
+    
+    
+          <script src="/ndb/static/plugins/jquery-1.11.1/js/jquery/jquery-1.11.1.min.js" type="text/javascript" ></script>
+<link href="/ndb/static/css/jquery-ui-1.10.4/smoothness/jquery-ui-1.10.4.custom.min.css" type="text/css" rel="stylesheet" media="screen, projection" />
+<script src="/ndb/static/plugins/jquery-ui-1.10.4/jquery-ui/js/jquery-ui-1.10.4.custom.min.js" type="text/javascript" ></script>
+
+    </head>
+<body style="background:#f7f7f7;">  
+<br/>
+	<div class="section clearfix"> 
+			<div style="padding-left:15px;">
+                <a href="http://www.usda.gov" target="_blank">
+                <img style="float:left;padding:5px;" src="/ndb/static/images/USDA-Logo.jpg" style="border:none;" alt="United States Department of Agriculture" id="USDALOGO" title="United States Department of Agriculture" height="51" width="72">
+                </a>
+                <span style="font-size:1.2em;font-weight:bold;color:#005842;">United States Department of Agriculture
+                <br/>Agricultural Research Service</span>
+                <br/><span style="font-weight:bold;font-size:1.4em;color:#000">
+               
+                
+                	USDA Food Composition Databases
+                
+                 </span>
+           
+			</div>
+           <div style="padding-left:105px;float:left">
+           </div>
+                
+	</div>
+	<br/>
+
+
+<div class="bodywrapper">
+<div class="nav">
+  
+   
+
+  
+    <ul id="jMenu" class="jMenu">
+  <li>
+    <a href="http://www.ars.usda.gov/main/site_main.htm?modecode=12-35-45-00" title="Go the NDL home page">NDL Home</a>
+  </li>
+  	<li >
+  		<a href="/ndb/foods" class="list" name="menu-advanced" title="Browse the foods list">Food Search</a>
+  		</li>
+  	<li>
+  		<a href="/ndb/nutrients/index" class="list" name="menu-advanced" title="Create a nutrients list report">Nutrients List</a>
+  	</li>
+  	<li>
+  		<a href="/ndb/beef/show" class="calc" title="Use the ground beef calculator">Ground Beef Calculator</a>
+  	</li>
+  	<li><a>Documentation and Help</a>
+  	<ul>
+  	 <li>
+    	<a href="/ndb/doc/index" class="help" title="How to use the NDB API">API</a>
+    </li>
+  
+    <li>
+    	<a href="http://www.ars.usda.gov/sp2UserFiles/Place/80400525/Data/SR/SR28/sr28_doc.pdf" class="docs" title="View and download release documentation" target="_help">SR28 Documentation</a>
+    </li>
+    <li>
+    	<a href="/ndb/docs/SR_BrandedFoods_May2016.pdf" class="docs" title="View and download branded food products documentation" target="_help">USDA Branded Food Products Documentation</a>
+    </li>
+  <li>
+    	<a href="/ndb/help/index" class="help" title="Read help on how to use the website">Help</a>
+    </li>
+    </ul>
+    </li>
+     	<li>
+  		<a href="http://www.ars.usda.gov/main/docs.htm?docid=4445" class="help" title="Click to contact us">Contact Us</a>
+  	</li>
+    
+</ul>
+    <script type="text/javascript">
+    
+  $(document).ready(function(){
+    // simple jMenu plugin called
+    $("#jMenu").jMenu();
+    // more complex jMenu plugin called
+    $("#jMenu").jMenu({
+      ulWidth : 130,
+      absoluteLeft:40,
+      paddingLeft:0,
+      effects : {
+        effectSpeedOpen : 100,
+        effectTypeClose : 'slide'
+      },
+      animatedText : false
+    });
+
+  });
+</script></div>
+ 
+      
+        
+       <form action="/ndb/search/search" method="post" name="quickform" id="quickform" >
+<input type="hidden" name="SYNCHRONIZER_TOKEN" value="08e8ea16-8905-498a-8727-219c27dccd5d" id="SYNCHRONIZER_TOKEN" />
+<input type="hidden" name="SYNCHRONIZER_URI" value="/ndb/foods" id="SYNCHRONIZER_URI" />
+        
+        	
+        <div id="pageBodyWide">
+           
+        
+
+                	<div style="font-size:.9em;" id="helpDiv"></div>   
+         		<br/>
+         		<div  style="width:100%;margin-left:30px;background-color:#fff" class="wbox">
+            
+           
+           <table style="font-size:1em;border:none;margin-left:10px;width:90%;border-spacing:0">
+           <tr colspan="3"><td> </td></tr>
+           <tr >
+           <th> 
+            <label for "qlookup" >Enter one or more terms
+            </label>
+           </th>
+           <th>
+           <span class="name" style="vertical-align:top;">Limit to Food Group</span>
+	    	</th>
+	    	 <th>
+           <span class="name" style="vertical-align:top;">Limit to Manufacturer</span>
+	    	</th>
+           </tr>
+           <TR class="nohov">
+           <TD  >
+           <span class="value"><input type="text" class="searchbox" style="width:90%;border-width:medium;" value="" title="Enter search terms" name="qlookup" size="180" id="qlookup" /></span>
+         </TD><td>
+     		<select class="value" id="fgcd" name="fgcd" title="Select one or more food groups (optional)" >
+<option value="" selected="selected">All food groups ...</option>
+<option value="American Indian/Alaska Native Foods" >American Indian/Alaska Native Foods</option>
+<option value="Baby Foods" >Baby Foods</option>
+<option value="Baked Products" >Baked Products</option>
+<option value="Beef Products" >Beef Products</option>
+<option value="Beverages" >Beverages</option>
+<option value="Branded Food Products Database" >Branded Food Products Database</option>
+<option value="Breakfast Cereals" >Breakfast Cereals</option>
+<option value="Cereal Grains and Pasta" >Cereal Grains and Pasta</option>
+<option value="Dairy and Egg Products" >Dairy and Egg Products</option>
+<option value="Fast Foods" >Fast Foods</option>
+<option value="Fats and Oils" >Fats and Oils</option>
+<option value="Finfish and Shellfish Products" >Finfish and Shellfish Products</option>
+<option value="Fruits and Fruit Juices" >Fruits and Fruit Juices</option>
+<option value="Lamb, Veal, and Game Products" >Lamb, Veal, and Game Products</option>
+<option value="Legumes and Legume Products" >Legumes and Legume Products</option>
+<option value="Meals, Entrees, and Side Dishes" >Meals, Entrees, and Side Dishes</option>
+<option value="Nut and Seed Products" >Nut and Seed Products</option>
+<option value="Pork Products" >Pork Products</option>
+<option value="Poultry Products" >Poultry Products</option>
+<option value="Restaurant Foods" >Restaurant Foods</option>
+<option value="Sausages and Luncheon Meats" >Sausages and Luncheon Meats</option>
+<option value="Snacks" >Snacks</option>
+<option value="Soups, Sauces, and Gravies" >Soups, Sauces, and Gravies</option>
+<option value="Spices and Herbs" >Spices and Herbs</option>
+<option value="Sweets" >Sweets</option>
+<option value="Vegetables and Vegetable Products" >Vegetables and Vegetable Products</option>
+</select>
+     		</td>
+     		<td>
+     		<select class="value" id="manu" name="manu" title="Select one or more food groups (optional)" onchange="jQuery.ajax({type:'POST',data:'qman='+escape(this.value)+'&fgcd='+escape(fgcd.value), url:'/ndb/search/updateFoodGroupSelectOptions',success:function(data,textStatus){},error:function(XMLHttpRequest,textStatus,errorThrown){},complete:function(XMLHttpRequest,textStatus){updateSelectOptions(arguments[0], "fgcd")}});search" >
+<option value="" selected="selected">All manufacturers ...</option>
+<option value="18 RABBITS, INC" >18 RABBITS, INC</option>
+<option value="ADM KAO LLC" >ADM KAO LLC</option>
+<option value="AMY'S" >AMY&#39;S</option>
+<option value="ARBY'S" >ARBY&#39;S</option>
+<option value="ATTUNE FOODS, LLC" >ATTUNE FOODS, LLC</option>
+<option value="Abbott's Ross Products Division" >Abbott&#39;s Ross Products Division</option>
+<option value="Acadian Seaplants Limited" >Acadian Seaplants Limited</option>
+<option value="Ancient Harvest" >Ancient Harvest</option>
+<option value="Andrea's Gluten Free" >Andrea&#39;s Gluten Free</option>
+<option value="Anheuser-Busch, Inc." >Anheuser-Busch, Inc.</option>
+<option value="Applebee's" >Applebee&#39;s</option>
+<option value="Archway Cookies" >Archway Cookies</option>
+<option value="Arizona Beverage Co." >Arizona Beverage Co.</option>
+<option value="Attune Foods, Inc." >Attune Foods, Inc.</option>
+<option value="B&G Foods, Inc" >B&amp;G Foods, Inc</option>
+<option value="BARBARA'S BAKERY, INC." >BARBARA&#39;S BAKERY, INC.</option>
+<option value="BARBARAS" >BARBARAS</option>
+<option value="BOULDER GRANOLA" >BOULDER GRANOLA</option>
+<option value="Banquet Foods Corp." >Banquet Foods Corp.</option>
+<option value="Barbara's Bakery, Inc" >Barbara&#39;s Bakery, Inc</option>
+<option value="Barilla" >Barilla</option>
+<option value="Beverages, GEROLSTEINER BRUNNEN GmbH & Co.KG" >Beverages, GEROLSTEINER BRUNNEN GmbH &amp; Co.KG</option>
+<option value="Bimbo Bakeries USA" >Bimbo Bakeries USA</option>
+<option value="Bolthouse Farms" >Bolthouse Farms</option>
+<option value="Burger King Corporation" >Burger King Corporation</option>
+<option value="CAMPBELL SOUP COMPANY" >CAMPBELL SOUP COMPANY</option>
+<option value="Campbell Soup Co." >Campbell Soup Co.</option>
+<option value="Cargill" >Cargill</option>
+<option value="Carrabba's Italian Grill" >Carrabba&#39;s Italian Grill</option>
+<option value="Chick-Fil-A" >Chick-Fil-A</option>
+<option value="Chobani" >Chobani</option>
+<option value="Chosen Roaster" >Chosen Roaster</option>
+<option value="Classico" >Classico</option>
+<option value="ConAgra Foods" >ConAgra Foods</option>
+<option value="ConAgra Foods inc" >ConAgra Foods inc</option>
+<option value="ConAgra, Inc." >ConAgra, Inc.</option>
+<option value="Concord Foods" >Concord Foods</option>
+<option value="Continental Mills, Inc." >Continental Mills, Inc.</option>
+<option value="Cracker Barrel" >Cracker Barrel</option>
+<option value="Crunchmaster" >Crunchmaster</option>
+<option value="Crystal Geyser Alpine Spring Water" >Crystal Geyser Alpine Spring Water</option>
+<option value="CytoSport" >CytoSport</option>
+<option value="DANNON Fluoride To Go" >DANNON Fluoride To Go</option>
+<option value="Danone" >Danone</option>
+<option value="Darden Group" >Darden Group</option>
+<option value="De Boles" >De Boles</option>
+<option value="Denny's" >Denny&#39;s</option>
+<option value="Dole Food Company" >Dole Food Company</option>
+<option value="Domino's Pizza, LLC" >Domino&#39;s Pizza, LLC</option>
+<option value="Dow AgroSciences, LLC" >Dow AgroSciences, LLC</option>
+<option value="Dr. Schar USA, Inc." >Dr. Schar USA, Inc.</option>
+<option value="EFFI" >EFFI</option>
+<option value="ESSENTIAL EVERYDAY" >ESSENTIAL EVERYDAY</option>
+<option value="FIELD DAY" >FIELD DAY</option>
+<option value="FREELAND FOODS" >FREELAND FOODS</option>
+<option value="GFA Brands" >GFA Brands</option>
+<option value="General Mills Inc." >General Mills Inc.</option>
+<option value="George weston Bakeries, Inc." >George weston Bakeries, Inc.</option>
+<option value="Glutino" >Glutino</option>
+<option value="Good Humor - Breyers Ice Cream" >Good Humor - Breyers Ice Cream</option>
+<option value="H.J. Heinz, Co." >H.J. Heinz, Co.</option>
+<option value="HONEY STINGER" >HONEY STINGER</option>
+<option value="Hain Celestial Group, Inc." >Hain Celestial Group, Inc.</option>
+<option value="Hershey Food Corp." >Hershey Food Corp.</option>
+<option value="Homestat Farm Ltd." >Homestat Farm Ltd.</option>
+<option value="Hormel Foods Corp." >Hormel Foods Corp.</option>
+<option value="House Foods" >House Foods</option>
+<option value="Hungry Man" >Hungry Man</option>
+<option value="Huy Fong Foods, Inc." >Huy Fong Foods, Inc.</option>
+<option value="IN BALANCE HEALTH CORP" >IN BALANCE HEALTH CORP</option>
+<option value="Icelandic Glacial Inc." >Icelandic Glacial Inc.</option>
+<option value="Interstate Bakeries Corporation" >Interstate Bakeries Corporation</option>
+<option value="Jimmy Dean Foods" >Jimmy Dean Foods</option>
+<option value="KIND, LLC" >KIND, LLC</option>
+<option value="Keebler, Co." >Keebler, Co.</option>
+<option value="Kellogg, Co." >Kellogg, Co.</option>
+<option value="Kentucky Fried Chicken" >Kentucky Fried Chicken</option>
+<option value="Kraft Foods, Inc." >Kraft Foods, Inc.</option>
+<option value="LOVE GROWN FOODS, LLC" >LOVE GROWN FOODS, LLC</option>
+<option value="LUNA BAR" >LUNA BAR</option>
+<option value="Lipton" >Lipton</option>
+<option value="Little Caesar's Pizza" >Little Caesar&#39;s Pizza</option>
+<option value="MILLVILLE" >MILLVILLE</option>
+<option value="MOM Brands" >MOM Brands</option>
+<option value="Mars Food US" >Mars Food US</option>
+<option value="Mary's Gone Crackers" >Mary&#39;s Gone Crackers</option>
+<option value="Masterfoods USA" >Masterfoods USA</option>
+<option value="McDonald's Corporation" >McDonald&#39;s Corporation</option>
+<option value="McKee Baking, Co." >McKee Baking, Co.</option>
+<option value="McNeil Nutritionals, LLC" >McNeil Nutritionals, LLC</option>
+<option value="McNeil Nutritionals/McNeil_PPC, Inc." >McNeil Nutritionals/McNeil_PPC, Inc.</option>
+<option value="Mead Johnson" >Mead Johnson</option>
+<option value="Merisant Company" >Merisant Company</option>
+<option value="Mezzetta" >Mezzetta</option>
+<option value="Mission Foods" >Mission Foods</option>
+<option value="Monster energy company" >Monster energy company</option>
+<option value="Morinaga Nutrional Foods, Inc." >Morinaga Nutrional Foods, Inc.</option>
+<option value="Mott's INC." >Mott&#39;s INC.</option>
+<option value="NAYA Inc." >NAYA Inc.</option>
+<option value="NEW ENGLAND NATURAL BAKERS" >NEW ENGLAND NATURAL BAKERS</option>
+<option value="Nabisco Brands, Inc." >Nabisco Brands, Inc.</option>
+<option value="Naked Juice Co. of Glendora, Inc." >Naked Juice Co. of Glendora, Inc.</option>
+<option value="Nature's Path" >Nature&#39;s Path</option>
+<option value="Nestle USA, Inc." >Nestle USA, Inc.</option>
+<option value="Nestle Waters North America Inc." >Nestle Waters North America Inc.</option>
+<option value="Ocean Spray Cranberries, Inc." >Ocean Spray Cranberries, Inc.</option>
+<option value="Odwalla" >Odwalla</option>
+<option value="Open Pit- Pinnacle Foods" >Open Pit- Pinnacle Foods</option>
+<option value="Ovaltine" >Ovaltine</option>
+<option value="Papa John's International, Inc." >Papa John&#39;s International, Inc.</option>
+<option value="Pepperidge Farm" >Pepperidge Farm</option>
+<option value="Pepsi-Cola North America" >Pepsi-Cola North America</option>
+<option value="Pepsico Mexico" >Pepsico Mexico</option>
+<option value="Pillsbury Co." >Pillsbury Co.</option>
+<option value="Pizza Hut, Inc." >Pizza Hut, Inc.</option>
+<option value="Planters- Kraft Foods Group" >Planters- Kraft Foods Group</option>
+<option value="Popeyes Chicken and Biscuits" >Popeyes Chicken and Biscuits</option>
+<option value="Post Foods, LLC" >Post Foods, LLC</option>
+<option value="Quaker Oats Company - The Gatorade Company,  a unit of Pepsi Co." >Quaker Oats Company - The Gatorade Company,  a unit of Pepsi Co.</option>
+<option value="Quesos La Ricura, Ltd." >Quesos La Ricura, Ltd.</option>
+<option value="Ralston Foods" >Ralston Foods</option>
+<option value="Red Bull North America/Red Bull GmbH" >Red Bull North America/Red Bull GmbH</option>
+<option value="Red Gold" >Red Gold</option>
+<option value="Rockstar, Inc." >Rockstar, Inc.</option>
+<option value="Rudi's Bakery" >Rudi&#39;s Bakery</option>
+<option value="S.A. Evian Co." >S.A. Evian Co.</option>
+<option value="SEVEN SUNDAYS, LLC" >SEVEN SUNDAYS, LLC</option>
+<option value="Sage Valley" >Sage Valley</option>
+<option value="Slim-Fast Foods Company" >Slim-Fast Foods Company</option>
+<option value="Smart Balance Foods" >Smart Balance Foods</option>
+<option value="Smart Soup" >Smart Soup</option>
+<option value="Snapple Beverage Corporation" >Snapple Beverage Corporation</option>
+<option value="Subway" >Subway</option>
+<option value="Sun Country Foods Inc." >Sun Country Foods Inc.</option>
+<option value="Sweet baby Ray's, Inc." >Sweet baby Ray&#39;s, Inc.</option>
+<option value="T.G.I Friday's" >T.G.I Friday&#39;s</option>
+<option value="TW Garner Food Company" >TW Garner Food Company</option>
+<option value="Taco Bell Corp." >Taco Bell Corp.</option>
+<option value="The Coca-Cola Company" >The Coca-Cola Company</option>
+<option value="The Dannon Company, Inc." >The Dannon Company, Inc.</option>
+<option value="The J.M. Smucker Co." >The J.M. Smucker Co.</option>
+<option value="The Quaker Oats, Co." >The Quaker Oats, Co.</option>
+<option value="The Weetabix Company" >The Weetabix Company</option>
+<option value="Tinkyada" >Tinkyada</option>
+<option value="Udi's Gluten Free" >Udi&#39;s Gluten Free</option>
+<option value="Unilever" >Unilever</option>
+<option value="Van's International Foods" >Van&#39;s International Foods</option>
+<option value="Vitasoy USA" >Vitasoy USA</option>
+<option value="WHOLLY WHOLESOME" >WHOLLY WHOLESOME</option>
+<option value="WILD HARVEST" >WILD HARVEST</option>
+<option value="Wendy's International, Inc." >Wendy&#39;s International, Inc.</option>
+<option value="WhiteWave Foods Company" >WhiteWave Foods Company</option>
+<option value="Wm. Bolthouse Farms, Inc." >Wm. Bolthouse Farms, Inc.</option>
+<option value="Zevia" >Zevia</option>
+<option value="bio-familia AG" >bio-familia AG</option>
+<option value="richardson" >richardson</option>
+</select>
+     		</td>
+     		<td style="text-align:right;">
+     		<input type='submit' style="font-size:.9em;color:black;" value='Go' title="Submit your search" id='create_submit' class='s2ui_hidden_button' />
+     		</td>
+     		
+     		<td style="font-size:1em;vertical-align:text-middle;width:10px">
+     			<a href="/ndb/help/contextHelp/search" onclick="jQuery.ajax({type:'POST', url:'/ndb/help/contextHelp/search',success:function(data,textStatus){jQuery('#helpDiv').html(data);},error:function(XMLHttpRequest,textStatus,errorThrown){}});return false;" id="search"><img style="vertical-align:text-bottom;"  src="/ndb/static/images/skin/help.png" title="Tips on how to search" border="0" /></a>
+     			
+     		</td>
+     		</tr>
+     		
+           </table>
+           </div>
+          
+    	 <div class="paginateButtons">
+                <span class="currentStep">1</span><a href="/ndb/foods?format=&amp;count=&amp;max=100&amp;sort=&amp;fgcd=&amp;manu=&amp;lfacet=&amp;qlookup=&amp;offset=100&amp;order=desc" class="step">2</a><a href="/ndb/foods?format=&amp;count=&amp;max=100&amp;sort=&amp;fgcd=&amp;manu=&amp;lfacet=&amp;qlookup=&amp;offset=200&amp;order=desc" class="step">3</a><a href="/ndb/foods?format=&amp;count=&amp;max=100&amp;sort=&amp;fgcd=&amp;manu=&amp;lfacet=&amp;qlookup=&amp;offset=300&amp;order=desc" class="step">4</a><a href="/ndb/foods?format=&amp;count=&amp;max=100&amp;sort=&amp;fgcd=&amp;manu=&amp;lfacet=&amp;qlookup=&amp;offset=400&amp;order=desc" class="step">5</a><a href="/ndb/foods?format=&amp;count=&amp;max=100&amp;sort=&amp;fgcd=&amp;manu=&amp;lfacet=&amp;qlookup=&amp;offset=500&amp;order=desc" class="step">6</a><a href="/ndb/foods?format=&amp;count=&amp;max=100&amp;sort=&amp;fgcd=&amp;manu=&amp;lfacet=&amp;qlookup=&amp;offset=600&amp;order=desc" class="step">7</a><a href="/ndb/foods?format=&amp;count=&amp;max=100&amp;sort=&amp;fgcd=&amp;manu=&amp;lfacet=&amp;qlookup=&amp;offset=700&amp;order=desc" class="step">8</a><a href="/ndb/foods?format=&amp;count=&amp;max=100&amp;sort=&amp;fgcd=&amp;manu=&amp;lfacet=&amp;qlookup=&amp;offset=800&amp;order=desc" class="step">9</a><a href="/ndb/foods?format=&amp;count=&amp;max=100&amp;sort=&amp;fgcd=&amp;manu=&amp;lfacet=&amp;qlookup=&amp;offset=900&amp;order=desc" class="step">10</a><span class="step gap">..</span><a href="/ndb/foods?format=&amp;count=&amp;max=100&amp;sort=&amp;fgcd=&amp;manu=&amp;lfacet=&amp;qlookup=&amp;offset=9100&amp;order=desc" class="step">92</a><a href="/ndb/foods?format=&amp;count=&amp;max=100&amp;sort=&amp;fgcd=&amp;manu=&amp;lfacet=&amp;qlookup=&amp;offset=100&amp;order=desc" class="nextLink">Next</a>
+            </div>
+     		<div class="message-left">
+     		
+            
+	          9,144 foods found&nbsp;Click on a food name to view details
+	          
+ 			<div></div>
+	      
+	      </div>
+     		
+            <div class="list-left" >
+            
+       	 <div class="wbox" style="width:100%;">
+                <table width="100%" style="border-spacing:0;">
+                    <thead>
+                        <tr style="font-size:1.1em;">
+                            <th style="width:10%;" class="desc" ><a href="/ndb/foods?format=&amp;count=&amp;max=100&amp;sort=ndb&amp;fgcd=&amp;manu=&amp;qlookup=&amp;offset=0&amp;order=asc">NDB No.</a></th>
+                        	<th style="width:60%;" class="desc" ><a href="/ndb/foods?format=&amp;count=&amp;max=100&amp;sort=fd_s&amp;fgcd=&amp;manu=&amp;qlookup=&amp;order=asc&amp;offset=0">Description</a></th>
+                        	<th style="width:30%;" class="desc" ><a href="/ndb/foods?format=&amp;count=&amp;max=100&amp;sort=fg&amp;fgcd=&amp;manu=&amp;qlookup=&amp;offset=0&amp;order=asc">Food Group</a></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    
+	   				
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="odd">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/1?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01001</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/1?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Butter, salted</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="even">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/2?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01002</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/2?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Butter, whipped, with salt</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="odd">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/3?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01003</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/3?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Butter oil, anhydrous</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="even">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/4?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01004</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/4?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cheese, blue</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="odd">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/5?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01005</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/5?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cheese, brick</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="even">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/6?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01006</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/6?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cheese, brie</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="odd">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/7?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01007</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/7?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cheese, camembert</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="even">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/8?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01008</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/8?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cheese, caraway</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="odd">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/9?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01009</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/9?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cheese, cheddar</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="even">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/10?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01010</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/10?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cheese, cheshire</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="odd">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/11?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01011</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/11?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cheese, colby</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="even">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/12?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01012</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/12?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cheese, cottage, creamed, large or small curd</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="odd">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/13?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01013</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/13?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cheese, cottage, creamed, with fruit</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="even">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/14?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01014</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/14?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cheese, cottage, nonfat, uncreamed, dry, large or small curd</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="odd">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/15?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01015</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/15?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cheese, cottage, lowfat, 2% milkfat</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="even">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/16?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01016</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/16?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cheese, cottage, lowfat, 1% milkfat</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="odd">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/17?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01017</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/17?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cheese, cream</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="even">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/18?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01018</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/18?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cheese, edam</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="odd">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/19?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01019</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/19?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cheese, feta</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="even">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/20?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01020</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/20?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cheese, fontina</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="odd">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/21?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01021</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/21?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cheese, gjetost</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="even">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/22?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01022</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/22?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cheese, gouda</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="odd">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/23?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01023</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/23?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cheese, gruyere</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="even">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/24?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01024</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/24?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cheese, limburger</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="odd">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/25?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01025</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/25?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cheese, monterey</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="even">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/26?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01026</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/26?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cheese, mozzarella, whole milk</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="odd">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/27?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01027</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/27?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cheese, mozzarella, whole milk, low moisture</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="even">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/28?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01028</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/28?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cheese, mozzarella, part skim milk</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="odd">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/29?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01029</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/29?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cheese, mozzarella, low moisture, part-skim</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="even">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/30?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01030</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/30?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cheese, muenster</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="odd">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/31?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01031</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/31?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cheese, neufchatel</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="even">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/32?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01032</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/32?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cheese, parmesan, grated</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="odd">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/33?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01033</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/33?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cheese, parmesan, hard</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="even">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/34?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01034</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/34?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cheese, port de salut</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="odd">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/35?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01035</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/35?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cheese, provolone</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="even">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/36?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01036</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/36?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cheese, ricotta, whole milk</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="odd">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/37?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01037</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/37?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cheese, ricotta, part skim milk</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="even">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/38?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01038</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/38?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cheese, romano</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="odd">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/39?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01039</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/39?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cheese, roquefort</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="even">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/40?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01040</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/40?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cheese, swiss</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="odd">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/41?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01041</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/41?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cheese, tilsit</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="even">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/42?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01042</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/42?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cheese, pasteurized process, American, fortified with vitamin D</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="odd">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/43?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01043</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/43?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cheese, pasteurized process, pimento</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="even">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/44?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01044</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/44?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cheese, pasteurized process, swiss</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="odd">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/45?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01045</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/45?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cheese food, cold pack, American</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="even">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/46?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01046</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/46?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cheese food, pasteurized process, American, vitamin D fortified</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="odd">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/47?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01047</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/47?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cheese food, pasteurized process, swiss</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="even">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/48?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01048</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/48?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cheese spread, pasteurized process, American</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="odd">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/49?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01049</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/49?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cream, fluid, half and half</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="even">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/50?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01050</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/50?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cream, fluid, light (coffee cream or table cream)</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="odd">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/51?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01052</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/51?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cream, fluid, light whipping</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="even">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/52?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01053</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/52?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cream, fluid, heavy whipping</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="odd">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/53?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01054</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/53?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cream, whipped, cream topping, pressurized</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="even">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/54?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01055</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/54?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cream, sour, reduced fat, cultured</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="odd">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/55?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01056</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/55?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cream, sour, cultured</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="even">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/56?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01057</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/56?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Eggnog</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="odd">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/57?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01058</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/57?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Sour dressing, non-butterfat, cultured, filled cream-type</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="even">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/58?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01059</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/58?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Milk, filled, fluid, with blend of hydrogenated vegetable oils</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="odd">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/59?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01060</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/59?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Milk, filled, fluid, with lauric acid oil</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="even">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/60?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01061</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/60?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cheese, American, nonfat or fat free</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="odd">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/61?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01067</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/61?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cream substitute, liquid, with hydrogenated vegetable oil and soy protein</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="even">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/62?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01068</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/62?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cream substitute, liquid, with lauric acid oil and sodium caseinate</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="odd">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/63?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01069</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/63?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Cream substitute, powdered</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="even">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/64?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01070</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/64?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Dessert topping, powdered</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="odd">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/65?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01071</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/65?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Dessert topping, powdered, 1.5 ounce prepared with 1/2 cup milk</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="even">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/66?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01072</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/66?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Dessert topping, pressurized</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="odd">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/67?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01073</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/67?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Dessert topping, semi solid, frozen</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="even">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/68?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01074</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/68?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Sour cream, imitation, cultured</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="odd">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/69?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01076</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/69?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Milk substitutes, fluid, with lauric acid oil</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="even">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/70?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01077</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/70?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Milk, whole, 3.25% milkfat, with added vitamin D</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="odd">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/71?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01078</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/71?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Milk, producer, fluid, 3.7% milkfat</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="even">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/72?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01079</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/72?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Milk, reduced fat, fluid, 2% milkfat, with added vitamin A and vitamin D</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="odd">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/73?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01080</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/73?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Milk, reduced fat, fluid, 2% milkfat, with added nonfat milk solids and vitamin A and vitamin D</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="even">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/74?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01081</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/74?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Milk, reduced fat, fluid, 2% milkfat, protein fortified, with added vitamin A and vitamin D</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="odd">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/75?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01082</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/75?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Milk, lowfat, fluid, 1% milkfat, with added vitamin A and vitamin D</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="even">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/76?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01083</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/76?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Milk, lowfat, fluid, 1% milkfat, with added nonfat milk solids, vitamin A and vitamin D</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="odd">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/77?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01084</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/77?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Milk, lowfat, fluid, 1% milkfat, protein fortified, with added vitamin A and vitamin D</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="even">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/78?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01085</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/78?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Milk, nonfat, fluid, with added vitamin A and vitamin D (fat free or skim)</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="odd">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/79?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01086</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/79?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Milk, nonfat, fluid, with added nonfat milk solids, vitamin A and vitamin D (fat free or skim)</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="even">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/80?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01087</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/80?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Milk, nonfat, fluid, protein fortified, with added vitamin A and vitamin D (fat free and skim)</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="odd">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/81?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01088</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/81?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Milk, buttermilk, fluid, cultured, lowfat</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="even">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/82?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01089</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/82?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Milk, low sodium, fluid</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="odd">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/83?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01090</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/83?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Milk, dry, whole, with added vitamin D</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="even">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/84?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01091</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/84?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Milk, dry, nonfat, regular, without added vitamin A and vitamin D</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="odd">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/85?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01092</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/85?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Milk, dry, nonfat, instant, with added vitamin A and vitamin D</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="even">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/86?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01093</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/86?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Milk, dry, nonfat, calcium reduced</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="odd">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/87?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01094</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/87?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Milk, buttermilk, dried</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="even">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/88?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01095</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/88?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Milk, canned, condensed, sweetened</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="odd">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/89?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01096</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/89?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Milk, canned, evaporated, with added vitamin D and without added vitamin A</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="even">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/90?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01097</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/90?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Milk, canned, evaporated, nonfat, with added vitamin A and vitamin D</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="odd">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/91?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01102</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/91?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Milk, chocolate, fluid, commercial, whole, with added vitamin A and vitamin D</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="even">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/92?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01103</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/92?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Milk, chocolate, fluid, commercial, reduced fat, with added vitamin A and vitamin D</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="odd">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/93?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01104</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/93?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Milk, chocolate, lowfat, with added vitamin A and vitamin D</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="even">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/94?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01105</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/94?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Milk, chocolate beverage, hot cocoa, homemade</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="odd">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/95?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01106</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/95?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Milk, goat, fluid, with added vitamin D</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="even">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/96?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01107</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/96?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Milk, human, mature, fluid</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="odd">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/97?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01108</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/97?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Milk, indian buffalo, fluid</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="even">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/98?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01109</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/98?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Milk, sheep, fluid</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="odd">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/99?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01110</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/99?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Milk shakes, thick chocolate</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+	   					
+	   						
+	   						
+		   				<tr style="line-height:1.2em;" class="even">
+	                            <td style="padding:8px;width:10%;font-style:;"><a href="/ndb/foods/show/100?fg=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">01111</a></td>
+	                        	<td style="line-height:100%;padding:8px;width:60%;font-style:;">
+	                            <a href="/ndb/foods/show/100?fgcd=&amp;manu=&amp;lfacet=&amp;format=&amp;count=&amp;max=100&amp;offset=0&amp;sort=&amp;qlookup=" style="font-weight:normal;" title="Click to view reports for this food">Milk shakes, thick vanilla</a>
+	                        	</td>
+	                            <td style="line-height:100%;padding:15Spx;width:25%;font-style:;">Dairy and Egg Products</td>
+	                        </tr>
+                     
+                         
+                    
+                    </tbody>
+                </table>
+                </div>
+            
+            <div class="paginateButtons">
+                <span class="currentStep">1</span><a href="/ndb/foods?format=&amp;count=&amp;max=100&amp;sort=&amp;fgcd=&amp;manu=&amp;lfacet=&amp;qlookup=&amp;offset=100&amp;order=desc" class="step">2</a><a href="/ndb/foods?format=&amp;count=&amp;max=100&amp;sort=&amp;fgcd=&amp;manu=&amp;lfacet=&amp;qlookup=&amp;offset=200&amp;order=desc" class="step">3</a><a href="/ndb/foods?format=&amp;count=&amp;max=100&amp;sort=&amp;fgcd=&amp;manu=&amp;lfacet=&amp;qlookup=&amp;offset=300&amp;order=desc" class="step">4</a><a href="/ndb/foods?format=&amp;count=&amp;max=100&amp;sort=&amp;fgcd=&amp;manu=&amp;lfacet=&amp;qlookup=&amp;offset=400&amp;order=desc" class="step">5</a><a href="/ndb/foods?format=&amp;count=&amp;max=100&amp;sort=&amp;fgcd=&amp;manu=&amp;lfacet=&amp;qlookup=&amp;offset=500&amp;order=desc" class="step">6</a><a href="/ndb/foods?format=&amp;count=&amp;max=100&amp;sort=&amp;fgcd=&amp;manu=&amp;lfacet=&amp;qlookup=&amp;offset=600&amp;order=desc" class="step">7</a><a href="/ndb/foods?format=&amp;count=&amp;max=100&amp;sort=&amp;fgcd=&amp;manu=&amp;lfacet=&amp;qlookup=&amp;offset=700&amp;order=desc" class="step">8</a><a href="/ndb/foods?format=&amp;count=&amp;max=100&amp;sort=&amp;fgcd=&amp;manu=&amp;lfacet=&amp;qlookup=&amp;offset=800&amp;order=desc" class="step">9</a><a href="/ndb/foods?format=&amp;count=&amp;max=100&amp;sort=&amp;fgcd=&amp;manu=&amp;lfacet=&amp;qlookup=&amp;offset=900&amp;order=desc" class="step">10</a><span class="step gap">..</span><a href="/ndb/foods?format=&amp;count=&amp;max=100&amp;sort=&amp;fgcd=&amp;manu=&amp;lfacet=&amp;qlookup=&amp;offset=9100&amp;order=desc" class="step">92</a><a href="/ndb/foods?format=&amp;count=&amp;max=100&amp;sort=&amp;fgcd=&amp;manu=&amp;lfacet=&amp;qlookup=&amp;offset=100&amp;order=desc" class="nextLink">Next</a>
+            </div>
+            </div>
+            
+            
+        </div>
+         
+     	</form>
+        <script>
+     	 $(document).ready(function() {
+         	 $('#create_submit').button();
+     		 $("#qlookup").autocomplete({
+     		  source: function(request, response){
+     		   $.ajax({
+     		    url: "/ndb/search/autosuggest?manu=&amp;fgcd=", // remote datasource
+     		    data: request,
+     		    type: 'get',
+     		    success: function(data){
+     		     response(data); // set the response
+     		    },
+     		    error: function(){ // handle server errors
+     		      $.jGrowl("Unable to retrieve Companies", {
+     		       theme: 'ui-state-error ui-corner-all'   
+     		      });
+        		  
+     		    }
+     		   });
+     		  },
+     		 
+     		  minLength: 2, // triggered only after minimum 2 characters have been entered.
+     		  select: function(event, ui) { // event handler when user selects a company from the list.
+     		   $("#id").val(ui.item.id); // 
+     		   $("#qlookup").val(ui.item.value); // populate the search field .
+     		 	 //document.location.href = '/ndb/foods/show/' + ui.item.id+'?manu=&fgcd='+';
+     		 	document.location.href = 'foods/show/'+ui.item.id+'?manu=&fgcd=';     		  }
+     		 });
+     		});
+     	$(function() {
+ 			$( "#helpDiv" ).dialog({
+ 				width:400,
+ 				resizable:true,
+ 				title: "Search Tip",
+ 				autoOpen: false,
+ 			});
+ 			$( "#search" ).click(function() {
+ 			$( "#helpDiv" ).dialog( "open" );
+ 			});
+ 			});
+     		$('#fgcd').change(
+     		    function(){
+     		        $('#quickform').trigger('submit');
+     		});
+     		$('#manu').change(
+         		function(){
+         		   $('#quickform').trigger('submit');
+         	});
+    </script>
+    
+ </div>
+        <div class="footer" >
+        
+        
+        	<br/>National Nutrient Database for Standard Reference<br/>
+        	Release 28 slightly revised May, 2016
+        
+			&#160;&#160;Software v.2.6.1<br/>
+			 <a href="http://www.nal.usda.gov">The National Agricultural Library</a>
+			 
+		</div>
+		 <script src="/ndb/static/bundle-bundle_application_defer.js" type="text/javascript" ></script>
+
+
+    </body>
+   
+</html>
