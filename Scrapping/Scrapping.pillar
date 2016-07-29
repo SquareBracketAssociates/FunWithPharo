@@ -92,7 +92,7 @@ NeoJSONWriter toStringPretty: factorsJSON.
 ]]]
 
 
-!! 
+!! Extracting nutrient
 For this demo, we have just collected the details of the first nutrient group - 'Proximates'. I am not clear what you want the full output to be - do you want to preserve the grouping structure, or just list all nutrients? There may be an easier way of identifying all nutrient rows, other than listing all the possible id strings.
 
 [[[
@@ -101,9 +101,9 @@ nutrientDetails := (ingredientDetailsXML xPath: '//tr[@id=''Proximates-0'']') co
 		[ :cell |cell contentString trim ] ].
 ]]]
 
-Note that the text content has to be trimmed, because the text in the XML file contains a lot of leading white spaces. I'm not sure if this is in the original web page, or if it is an artefact of the XMLHTMLParser.
+Note that the text content has to be trimmed, because the text in the XML file contains a lot of leading white spaces. I'm not sure if this is in the original web page, or if it is an artefact of the ==XMLHTMLParser==.
 
-Again form a dictionary for each row. The collection of nutrient dictionaries will later be embedded in the ingredient dictionary.
+Again we form a dictionary for each row. The collection of nutrient dictionaries will later be embedded in the ingredient dictionary.
 
 [[[
 nutrientJSON := nutrientDetails collect: 
@@ -115,9 +115,15 @@ NeoJSONWriter toStringPretty: nutrientJSON.
 ]]]
 
 
-"Finally assemble all the information for the first ingredient as a JSON file. NeoJSON automatically takes care of embedding dictionaries within a collection within a dictionary."
+Finally assemble all the information for the first ingredient as a JSON file. NeoJSON automatically takes care of embedding dictionaries within a collection within a dictionary.
+
 NeoJSONWriter toStringPretty: 
 	((ingredientsJSON first) 
 		at: 'factors' put: factorsJSON; 
 		at: 'nutrients' put: nutrientJSON; 
 		yourself).
+		
+		
+!! Conclusion 
+
+We presented a way to extract information from structured document. The 
