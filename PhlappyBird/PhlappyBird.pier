@@ -14,7 +14,7 @@ SystemWindow subclass: #PhlappyBirdGame
 	category: 'PhlappyBird'
 ]]]
 
-The game can be started by typing ==PhlappyBirdGame play <DoIt>==. That creates a new game, opens it window in te world and sets its width and height.
+The game can be started by typing ==PhlappyBirdGame play <DoIt>==. That creates a new game, opens its window in the world and sets its width and height.
 
 [[[
 PhlappyBirdGame class>>play
@@ -64,7 +64,7 @@ PhlappyBirdGame>>createRestartButton
 		label: #restartButtonLabel
 ]]]
 
-The PluggableButtonMorph will react to being clicked by performing the ==restartPressed== action method on its model (self), and gets its label from the ==restartButtonLabel== method. The label is just a string. A PluggableButtonMorph can show a binary value, and by ==setState: nil== it is indicated that this is just a plain button.
+The PluggableButtonMorph will react to being clicked on by performing the ==restartPressed== action method on its model (self), and gets its label from the ==restartButtonLabel== method. The label is just a string. A PluggableButtonMorph can show a binary value, and by ==setState: nil== it is indicated that this is just a plain button.
 
 [[[
 PhlappyBirdGame>>restartButtonLabel
