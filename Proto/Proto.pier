@@ -1,0 +1,229 @@
+! Experimenting with Prototypes
+
+In this chapter we want to build with you step by step a little prototype language. With prototype single object can have an instance specific state and behavior. 
+This language does not unify state and behavior: it means that the basic clone operation only clone state and delegation only share behavior.  
+
+With this approach we can build other operation to clone and share behavior at that moment. 
+
+Our implementation is based on the use of anonymous class that we can dynamically inject in the superclass chain (between an instance and its class) and where we can then compile instance specific behavior. 
+
+!! ExNihilo creation
+
+There are different way to create prototypes and our language support two ways: the exnihilo creation and the cloning. Let us start with the exnihilo one. 
+
+[[[
+testExNihiloCreateDifferentObjects
+
+	self deny: Proto exNihilo == Proto exNihilo
+]]]
+
+[[[
+testExNihiloCreateDifferentImplementationClasses
+
+	| p1 p2 |
+	p1 := Proto exNihilo.
+	p2 := Proto exNihilo.
+	self deny: p1 == p2.
+	self deny: p1 class == p2 class.
+]]]
+
+[[[
+Proto class >> exNihilo
+
+	^ self behavior new
+]]]
+
+[[[ 
+Proto class >> behavior
+
+	^ Proto newAnonymousSubclass
+]]]
+
+The following snippet shows that we create two objects from nothing and that we can set to them different values and retrieve them. 
+
+[[[
+| o o1 |
+o := Proto exNihilo.
+o at: #foo put: 42.
+o at: #foo.
+>>> 42
+
+o1 := Proto exNihilo.
+o1 at: #foo put: 33.
+o1 at: #foo.
+>>> 33 
+]]]
+
+Let us turn that into a test.
+
+[[[
+testExNihiloCreation 
+
+	| o |
+	o := Proto exNihilo.
+	o at: #foo put: 42.
+	self assert: (o at: #foo) equals: 42.
+]]]
+
+
+Since we do not want to touch the Pharo compiler we represent object variables as a dictionary.
+
+[[[
+Proto >> initialize
+	states := Dictionary new.
+]]]
+
+[[[
+Proto >> at: aSymbol
+	^ states at: aSymbol
+
+Proto >> at: aSymbol put: aValue 
+	^ states at: aSymbol put: aValue
+
+Proto >> states
+	^ states
+]]]
+
+
+
+[[[
+Proto >> variableNames
+
+	^ states keys
+]]]
+
+
+!! Clone 
+
+[[[
+| o o1 |
+o := Proto exNihilo.
+o at: #foo put: 42.
+o at: #foo.
+>>> 42
+
+o1 := o clone.
+o1 at: #foo put: 33.
+o1 at: #foo.
+"> 33"
+o at: #foo.
+"> 42"
+]]]
+
+[[[
+Proto >> clone	
+	^ self copy
+]]]
+
+But now we are sharing the object state!
+So we should copy the state too. 
+
+[[[
+Proto >> postCopy	
+	states := self states copy.
+]]]
+
+We will see that this is not correct because now our two objects are sharing the same anonymous subclass and the same behavior. So adding one method will add this behavior to both objects while it should not. We are not in class-based languages.
+
+
+!! About behavior
+
+
+[[[
+Proto >> define: aString
+	self class compile: aString classified: 'methods' 
+]]]
+
+
+[[[
+| o o1 |
+o := Proto exNihilo.
+o at: #foo put: 42.
+o at: #foo.
+>>> 42
+
+o1 := o clone.
+o1 at: #foo put: 33.
+o1 at: #foo.
+>>> 33
+
+o define: 'double  ^ (self at: #foo) * 2'.
+o double. 
+>>>84
+]]]
+
+
+
+!! Instance specific behavior
+
+[[[
+o1 double. 
+>>> 66    
+do we want this? is cloning keeping a link to the parent? "
+]]]
+
+This is not really correct since it is more like class-based where multiple class are sharing 
+common behavior. So we should create a new prototype with its own anonymous class and copy the 
+the state of its mother prototype. Then after the two objects are autonomous. 
+
+[[[
+Proto >> clone
+	
+	| newObject |
+	newObject := self class exNihilo.
+	newObject states: self states copy.
+	^ newObject
+]]]
+
+[[[
+testCloningShouldNotShareBehavior
+
+	| o o1 |
+	o := Proto exNihilo.
+	o at: #foo put: 42.
+	o define: 'double  ^ (self at: #foo) * 2'.
+	self assert: o double equals: 84.
+	o1 := o clone.
+	o1 at: #foo put: 33.
+	self should:  [ o1 double] raise: MessageNotUnderstood 
+]]]	
+
+!! Delegation
+
+[[[
+testDelegation
+
+	| o o1 |
+	o := Proto exNihilo.
+	o at: #foo put: 42.
+	o define: 'double  ^ (self at: #foo) * 2'.
+	o1 := Proto exNihilo.
+	self should:  [ o1 double] raise: MessageNotUnderstood. 
+	o1 delegateTo: o.
+	o1 at: #foo put: 33.
+	self assert: o1 double equals: 66 
+]]]
+
+[[[
+Proto >> delegateTo: anObject
+
+	 self class superclass: anObject class 
+]]]
+	
+	
+In the model we implemented we make a difference between state and behavior. 
+Cloning only clone the state and does not clone the state and delegation only share behavior. 
+
+[[[
+testDelegationOnlyShareBehavior
+
+	| o o1 |
+	o := Proto exNihilo.
+	o at: #foo put: 42.
+	o define: 'double  ^ (self at: #foo) * 2'.
+	o1 := Proto exNihilo.
+	self should:  [ o1 double] raise: MessageNotUnderstood. 
+	o1 delegateTo: o.
+	self should:  [ o1 double] raise: KeyNotFound
+]]]
+ 
