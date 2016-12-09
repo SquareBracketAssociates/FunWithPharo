@@ -84,6 +84,18 @@ Proto >> states
 	^ states
 ]]]
 
+Since we love representation of implementation and introspective system, let's define a little API for it. 
+
+[[[
+testMeta
+
+	| o o1 |
+	o := Proto exNihilo.
+	o at: #foo put: 42.
+	self assert: (o variableNames includes: #foo).  
+	o1 := o clone.
+	self assert: (o1 variableNames includes: #foo).  
+]]]
 
 
 [[[
@@ -189,7 +201,12 @@ testCloningShouldNotShareBehavior
 ]]]	
 
 !! Delegation
+In class-based language, a class reuses and extends the behavior of other class using inheritance. In prototype-based language the pendant is delegation. With prototype delegation
+when a method is not found in the receiver it is looked up in its proto or parent following a delegation chain and when it is found, it is applied to the receiver of the message. 
 
+@@note It should be noted that delegation in class-based language is not the same as delegation in prototype languages because in class-based language delegation the receiver of the delegated message change. In prototype language delegation similarly than with class-based inheritance a method is looked in different behavior container and applied to the receiver of the message. 
+
+Let us write some test to cover the semantics we want to implement. 
 [[[
 testDelegation
 
@@ -203,6 +220,7 @@ testDelegation
 	o1 at: #foo put: 33.
 	self assert: o1 double equals: 66 
 ]]]
+
 
 [[[
 Proto >> delegateTo: anObject
@@ -227,3 +245,5 @@ testDelegationOnlyShareBehavior
 	self should:  [ o1 double] raise: KeyNotFound
 ]]]
  
+!! Conclusion
+
