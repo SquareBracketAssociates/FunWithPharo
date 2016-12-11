@@ -247,3 +247,4 @@ testDelegationOnlyShareBehavior
  
 !! Conclusion
 
+You implemented a little prototype core in which objects can be created by cloning other objects, created exnihilo, 
