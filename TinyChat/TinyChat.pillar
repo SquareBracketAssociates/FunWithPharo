@@ -116,7 +116,7 @@ First we create the method ==fromString:== filling up the instance variables of 
 TCMessage >> fromString: aString
 	"Compose a message from a string of this form 'sender>message'."
 	| items |
-	items := aString subStrings: separator.
+	items := aString substrings: separator.
 	self sender: items first.
 	self text: items second.
 ]]]
@@ -437,7 +437,7 @@ TinyChat >> readMissingMessages
 	^ response 
 		ifNil: [ 0 ]
 		ifNotNil: [  
-			receivedMessages := response subStrings: (String crlf).
+			receivedMessages := response substrings: (String crlf).
 			receivedMessages do: [ :msg | messages add: (TCMessage fromString: msg) ].
 			receivedMessages size.
 		].
